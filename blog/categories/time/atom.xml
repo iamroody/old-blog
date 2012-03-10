@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[I am Roody]]></title>
-  <link href="http://iamroody.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: time | I am Roody]]></title>
+  <link href="http://iamroody.github.com/blog/categories/time/atom.xml" rel="self"/>
   <link href="http://iamroody.github.com/"/>
   <updated>2012-03-10T10:18:03+08:00</updated>
   <id>http://iamroody.github.com/</id>
@@ -19,15 +19,6 @@
     <updated>2012-03-10T10:03:00+08:00</updated>
     <id>http://iamroody.github.com/blog/2012/03/10/zhe-shi-[?]-ge-feng-kuang-de-shi-jie</id>
     <content type="html"><![CDATA[<p>ssss</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[你好]]></title>
-    <link href="http://iamroody.github.com/blog/2012/03/10/ni-hao/"/>
-    <updated>2012-03-10T10:02:00+08:00</updated>
-    <id>http://iamroody.github.com/blog/2012/03/10/ni-hao</id>
-    <content type="html"><![CDATA[<p>I just want to use this frame work</p>
 ]]></content>
   </entry>
   
