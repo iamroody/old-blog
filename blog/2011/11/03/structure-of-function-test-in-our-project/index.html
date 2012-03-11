@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Structure of Function Test In Our Project - I am Roody</title>
+  <meta name="author" content="Roody">
+
+  
+  <meta name="description" content="Our project is a python web application based on Django framework, we use selenium as web driver to run our function test. Directory structure of &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://iamroody.github.com/blog/2011/11/03/structure-of-function-test-in-our-project">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="I am Roody" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">I am Roody</a></h1>
+  
+    <h2>This is my blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:iamroody.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Structure of Function Test in Our Project</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-03T13:39:38+08:00" pubdate data-updated="true">Nov 3<span>rd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Our project is a python web application based on Django framework, we use selenium as web driver to run our function test. <strong>Directory structure</strong> of function test is like this:
+&#8211;func_tests
+<strong><strong><strong><em>&#8212;-framework
+</em></strong></strong></strong><strong><strong>&#8212;-drivers
+</strong></strong><strong><strong><strong><em>&#8212;-utils
+</em></strong></strong></strong>&#8212;-pages
+<strong><strong><strong><strong><strong>&#8212;-indexpage
+</strong></strong></strong></strong></strong>&#8212;-projectpage
+<strong><em><strong><strong><strong><em>&#8230; &#8230;
+</em></strong></strong></strong>&#8212;-resources
+</em></strong><strong><strong>&#8212;-testdata
+</strong></strong><strong><em>&#8212;-tests
+</em></strong><strong><strong><strong><em>&#8212;-indexpagetests
+</em></strong></strong></strong><strong><em>&#8212;-projectpagetests
+</em></strong>*******&#8230; &#8230;</p>
+
+<p><strong>Framework directory :</strong>
+In drivers directory: we wrap original web driver into costumed driver which offers more functions about choosing webdriver and selecting web elements .
+In utils directory: we offer basic operate functions for dealing with database, meanwhile, wrap basic web element to different specify elements such as button_web_element, drop_down_web_element.</p>
+
+<p><strong>pages directory:</strong>
+Create a single page object for each page you want to test, page object offers basic element locator 、navigation、response message and so on .</p>
+
+<p><strong>Resources directory:</strong>
+Put some local settings files for function test here, which are same as setting files in APP.</p>
+
+<p><strong>Testdata directory:</strong>
+Basic testdata for more than 1 function test , such as account info, initial date for database and so on.</p>
+
+<p><strong>Tests directory:</strong>
+All function tests are here, each page test is a single directory, also, end to end tests are here. In each test directory , there is page test file and corresponding test data.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Roody</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-03T13:39:38+08:00" pubdate data-updated="true">Nov 3<span>rd</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tech/'>tech</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://iamroody.github.com/blog/2011/11/03/structure-of-function-test-in-our-project/" data-via="" data-counturl="http://iamroody.github.com/blog/2011/11/03/structure-of-function-test-in-our-project/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/11/02/be-careful-auto-import-in-your-ide/" title="Previous Post: Be careful auto import in your IDE">&laquo; Be careful auto import in your IDE</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/11/04/in-memory-database/" title="Next Post: In-memory database">In-memory database &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/12/31/20112012/">2011~2012</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/30/hash-code/">HashCode</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/10/devops/">DEVOPS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/08/the-next-30-days/">The next 30 days</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/06/what-i-want-to-be-in-next-5-years/">What I want to be in next 5 years ?</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Roody -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

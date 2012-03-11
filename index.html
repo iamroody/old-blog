@@ -9,7 +9,13 @@
   <meta name="author" content="Roody">
 
   
-  <meta name="description" content=" Blog Archives Recent Posts ">
+  <meta name="description" content="本命年、毕业、旅行、上班、TWU&#8230;
+闹心、离别、兴奋、迷茫、开心&#8230;
+2011年过去了，我很怀念它. 展望着不是世界末日的2012，有很多的远景
+希望自己在工作能力上能有进一步的提高
+希望能在某些领域有所专长
+希望改掉那些工作过渡期的缺点
+希望能有一次长途旅行 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,7 +71,597 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/31/20112012/">2011~2012</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-31T23:32:54+08:00" pubdate data-updated="true">Dec 31<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://wangyan.info/wp-content/uploads/2011/12/Screen-Shot-2011-12-31-at-11.24.32-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/12/Screen-Shot-2011-12-31-at-11.24.32-PM-300x179.png" alt="2012" /></a></p>
+
+<p>本命年、毕业、旅行、上班、TWU&#8230;
+闹心、离别、兴奋、迷茫、开心&#8230;
+2011年过去了，我很怀念它.</p>
+
+<p>展望着不是世界末日的2012，有很多的远景
+希望自己在工作能力上能有进一步的提高
+希望能在某些领域有所专长
+希望改掉那些工作过渡期的缺点
+希望能有一次长途旅行
+希望能好好培养自己的摄影和绘画的爱好</p>
+
+<p>Hello 2012, I&#8217;m ready !</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/30/hash-code/">HashCode</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-30T22:37:01+08:00" pubdate data-updated="true">Dec 30<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Java中的每一个对象都拥有hashCode()方法来生成该对象的hash code，那么这个hash code是做什么用的呢？</p>
+
+<p>首先要说起<a href="http://en.wikipedia.org/wiki/Hash_table">hash table</a>，<a href="http://math.hws.edu/javanotes/c10/s3.html">结构</a>如下：</p>
+
+<p><a href="http://wangyan.info/wp-content/uploads/2011/12/hashTable.png"><img src="http://wangyan.info/wp-content/uploads/2011/12/hashTable-300x279.png" alt="" /></a></p>
+
+<p>hash code 就是对象在数组中的索引的位置，当然也有情况是几个对象的hash code 值一样（如2 ,5 ），这种情况叫做 collision，我们用链表来存储。</p>
+
+<p>我们再返回到这个问题上，例如, 你新建了一个hash map来存放一个叫做Rect类以及对Rect的描述：
+<code>Map map = HashMap();
+map.put(new Rect(4,5), "rect");
+</code>
+同时又通过get方法来获取描述，如:
+<code>String description = map.get(new Rect(4,5))</code></p>
+
+<p>在这种情况下，我们所获取得到的是null值。你也许会想，“哦，因为是new出来的对象，所以两个肯定不等，需要override object.equals() 方法”。然而，override之后，依然取到的是null值。</p>
+
+<p>因为在JAVA中，hash table的put和get方法中，都有这样的一段判断代码来决定是否在一个位置上存储和读取对象：
+<code>if ((e.hash == hash) &amp;&amp; e.key.equals(key))</code>
+既检查hash code值是否相等，还调用对象的equals方法，因此我们在覆盖equals方法时，同时一定要覆盖hashCode方法来保证相同的object有相同的hash code，如果不这样做的话，当这个class和hash set、hash map、hash table一起工作时将会出错。</p>
+
+<p>因此，关于hashcode()有个通用的约定：
+A. Whenever it is invoked on the same object more than once during an execution of a Java application, the hashCode method must consistently return the same integer, provided no information used in equals comparisons on the object is modified. This integer need not remain consistent from one execution of an application to another execution of the same application.</p>
+
+<p>B. If two objects are equal according to the equals(Object) method, then calling the hashCode method on each of the two objects must produce the same integer result.</p>
+
+<p>C. It is <em>not</em> required that if two objects are unequal according to the <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#equals(java.lang.Object">equals(java.lang.Object)</a>) method, then calling the hashCode method on each of the two objects must produce distinct integer results. However, the programmer should be aware that producing distinct integer results for unequal objects may improve the performance of hashtables.</p>
+
+<p>当然了，如果相同的实例能拥有唯一的hash code值，对hash table的性能提升有很大的帮助，固然很好，但是往往是蛮困难的。 那么如何写一个有效的hashCode方法呢？
+在effective java中叙述的非常详细，在这里举个例子:
+<code>@Override
+public int hashCode()
+{
+int result = 17;
+result = 31 * result + length;
+result = 31 * result + width;
+return result;
+}
+</code>如果class的content是String或其他实例的话，可以考虑使用.hashCode()来计算result值。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/10/devops/">DEVOPS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-10T00:03:23+08:00" pubdate data-updated="true">Nov 10<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-09-at-11.41.35-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-09-at-11.41.35-PM-300x193.png" alt="" /></a></p>
+
+<p>Today, Cosmin gave us a session about devops, but the session didn&#8217;t tell too much about what&#8217;s the devops, it focused on another aspect about project. When the project&#8217;s development is finished, who will care about the rest works, including how to deploy , maintain, upgrade, monitor and so on.  The session talked a lot about what the operation team need and do.</p>
+
+<p>You can find the <a href="http://en.wikipedia.org/wiki/DevOps">definition</a> about devops on wikipedia, but the best way to learn devops is practice， try to do some devops things on your local machine, for example chef, pupet, build pipeline, one click deploy and so on .</p>
+
+<p>I am really interested in devops, i will start to learn from now no.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/08/the-next-30-days/">The Next 30 Days</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-08T23:21:22+08:00" pubdate data-updated="true">Nov 8<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-08-at-11.23.19-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-08-at-11.23.19-PM.png" alt="" /></a></p>
+
+<p>Michael shared a TED video named <a href="http://v.youku.com/v_show/id_XMjgxNDA4OTIw.html">&#8220;the next 30 days&#8221;</a>, it talks about make some personal plan in next 30 days.</p>
+
+<p>Because whether you like, the following days will go away, so why not do some thing that you really want to do but never done. In next 30 days, try to insist on it every day . In this way, the next 30 days become more meaningful for you ,and worth memory.</p>
+
+<p>After that video, i decided write blog every day in next 30 days.</p>
+
+<p>It really works well, i wrote about 5 blogs at first way. But last night i forgot to write it, why? i worked on pair stairs until 3:00 AM. But i still should write it in the morning , not delayed it to the last minutes.</p>
+
+<p>So, what&#8217;s your plan for next 30 days ?</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/06/what-i-want-to-be-in-next-5-years/">What I Want to Be in Next 5 Years ?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-06T23:54:46+08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-06-at-11.52.51-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-06-at-11.52.51-PM.png" alt="" /></a>
+Since the first day i entered into company, i always ask myself this question, The process of thinking makes me be aware of what and why i am doing this currently.</p>
+
+<p>For me, different stages have different answers even though i just worked here for 4 months. In the first 2 months, i just thought about how to survive in TW, and avoid being fired in 6 months&#8217; probation period. I want to write clean code ,learn more new things about software development, pursue high quality software, but I don&#8217;t have clear career plan. During TWU, i began to know what i should do and how i prepare for that.</p>
+
+<p>From a thoughtworker&#8217;s blog, i know that one person&#8217;s future depends on fit that you between your company&#8217;s core values. Person&#8217;s development is related to your company&#8217;s development. What&#8217;s your company&#8217;s core offering ? What can you offer values in those offerings?</p>
+
+<p>The following picture is thoughtworks&#8217; core offering:
+<a href="http://wangyan.info/wp-content/uploads/2011/11/core-offering.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/core-offering.png" alt="" /></a></p>
+
+<p>thoughtworks&#8217; core values are software excellence, Methodology around it is continuous design and delivery . the left side is consulting, including experience design, continuous improvement and technical skills. The right side is ALM , including Go, Mingle and Twist.</p>
+
+<p>According to core offerings, i make a simple plan for myself:</p>
+
+<p>In the first 2 years , i will focus on continuous design and delivery, learn the enough technical skills to handle with daily work easily, contribute velocity , dive into some special tech areas which i am interested or more promising, for example , i am interested in UX and DEVOPS. I prefer to work in offshore delivery project. It will great that if the client just like REA that so cooperative and kind. I hope have enough business trip to practice myself communicating with clients.</p>
+
+<p>In the third or fourth year, i hope try some consulting task and have a specify technical that i am good at. I prefer do more BA&#8217;s work at that period and hope have a chance to participate in a project from begin to end. If i have a chance i want to more work on tw&#8217;s studio.</p>
+
+<p>In the fifth year, i hope i can still work in thoughtworks. At that time , i hope i can be good at consulting work , give clients awesome technical advice, be a tech leader in a project.</p>
+
+<p>I hope everyday i can be better than yesterday !</p>
+
+<p>Reference:
+我的未来在哪里？ http://www.tuzei8.com/page/3/</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/05/pechakucha/">PechaKucha</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-05T23:54:42+08:00" pubdate data-updated="true">Nov 5<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>[gallery]
+In thoughtworks university , every wednesday is PechaKucha night. At that night, presenter will give a presentation based on 20 slides, forward automatically in every 20 seconds. The topic can be anything that you know well or interested, such as drink, mind, movie star, food , tea, sports and so on.</p>
+
+<p>In traditional presentation, presenter always talked a lot and miss the key point of subject. PechaKucha makes you using a simple and refined way to transfer new knowledge or concept , and it won&#8217;t take a long time ,just 400 seconds.</p>
+
+<p>PechaKucha Night was devised in Tokyo in February 2003 as an event for young designers to meet, network, and show their work in public. It has turned into a massive celebration, with events happening in hundreds of cities around the world, inspiring creatives worldwide. Drawing its name from the Japanese term for the sound of &#8220;chit chat&#8221;, it rests on a presentation format that is based on a simple idea: 20 images x 20 seconds. It&#8217;s a format that makes presentations concise, and keeps things moving at a rapid pace.</p>
+
+<p>PechaKucha official website:  http://www.pecha-kucha.org/</p>
+
+<p>This is my PechaKucha PPT</p>
+
+<p><strong><a href="http://www.slideshare.net/iamroody/hiking-10040272">Hiking</a></strong></p>
+
+<p>View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/iamroody">iamroody</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/04/in-memory-database/">In-memory Database</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-04T23:59:34+08:00" pubdate data-updated="true">Nov 4<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>Definition</strong>
+An in-memory database is a database that runs entirely in main memory, without touching a disk. Often they run as an embedded database: created when a process starts, running embedded within that process, and is destroyed when the process finishes.
+(From Martin Fowler , <a href="http://martinfowler.com/bliki/InMemoryTestDatabase.html">InMemoryTestDatabase</a>)</p>
+
+<p><strong>Contrast</strong>
+Much faster than disk-optimized database, because simpler algorithms,fewer CPU instructions, fewer I/O reading activity.
+Lack support for durability portion of ACID, because it will lose all information when lose power or reset. But they can add durability via using some mechanisms, such as snapshot files,transaction logging,Non-volatile random, access memory, high availability.</p>
+
+<p><strong>When to use it ?</strong>
+Using in-memory database in a enterprise application can dramatically reduce build time
+Not touching real database in unit test. it is safe for real database, keep database independent and clean. Don&#8217;t worry about the sequence of test caused different db result .</p>
+
+<p><strong>Which database ?</strong>
+<a href="http://www.sqlite.org/">Sqlite</a>
+<a href="http://hsqldb.org/">HSQLDB</a>
+<a href="http://www.mysql.com/products/cluster/">MySQL Cluster</a>
+<a href="http://www.mcobject.com/extremedbfamily.shtml">eXtremeDB</a>
+<a href="http://www.oracle.com/technetwork/database/timesten/overview/index.html">Oracle TimesTen In-Memory Databas</a>
+<a href="http://www.sybase.com/manage/in-memory-databases">Sybase in-memory databases</a>
+<a href="http://www-01.ibm.com/software/data/soliddb/">solidDB</a></p>
+
+<p><strong>Reference</strong>
+<a href="http://martinfowler.com/bliki/InMemoryTestDatabase.html">InMemoryTestDatabase</a>
+<a href="http://en.wikipedia.org/wiki/In-memory_database">In-memory database</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/03/structure-of-function-test-in-our-project/">Structure of Function Test in Our Project</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-03T13:39:38+08:00" pubdate data-updated="true">Nov 3<span>rd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Our project is a python web application based on Django framework, we use selenium as web driver to run our function test. <strong>Directory structure</strong> of function test is like this:
+&#8211;func_tests
+<strong><strong><strong><em>&#8212;-framework
+</em></strong></strong></strong><strong><strong>&#8212;-drivers
+</strong></strong><strong><strong><strong><em>&#8212;-utils
+</em></strong></strong></strong>&#8212;-pages
+<strong><strong><strong><strong><strong>&#8212;-indexpage
+</strong></strong></strong></strong></strong>&#8212;-projectpage
+<strong><em><strong><strong><strong><em>&#8230; &#8230;
+</em></strong></strong></strong>&#8212;-resources
+</em></strong><strong><strong>&#8212;-testdata
+</strong></strong><strong><em>&#8212;-tests
+</em></strong><strong><strong><strong><em>&#8212;-indexpagetests
+</em></strong></strong></strong><strong><em>&#8212;-projectpagetests
+</em></strong>*******&#8230; &#8230;</p>
+
+<p><strong>Framework directory :</strong>
+In drivers directory: we wrap original web driver into costumed driver which offers more functions about choosing webdriver and selecting web elements .
+In utils directory: we offer basic operate functions for dealing with database, meanwhile, wrap basic web element to different specify elements such as button_web_element, drop_down_web_element.</p>
+
+<p><strong>pages directory:</strong>
+Create a single page object for each page you want to test, page object offers basic element locator 、navigation、response message and so on .</p>
+
+<p><strong>Resources directory:</strong>
+Put some local settings files for function test here, which are same as setting files in APP.</p>
+
+<p><strong>Testdata directory:</strong>
+Basic testdata for more than 1 function test , such as account info, initial date for database and so on.</p>
+
+<p><strong>Tests directory:</strong>
+All function tests are here, each page test is a single directory, also, end to end tests are here. In each test directory , there is page test file and corresponding test data.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/02/be-careful-auto-import-in-your-ide/">Be Careful Auto Import in Your IDE</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-02T19:35:52+08:00" pubdate data-updated="true">Nov 2<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In our project , we have two kinds of database, postgresql and couchdb.
+For postgresql, when we want to add a new model related table in django, we should extend models.Model class and add some filed like this:</p>
+
+<pre><code>class ProgresTableModel(models.Model):
+ message = CharField(max_length=160)
+ organization = ForeignKey(Organization)
+ status = BooleanField(default=False)
+ ......
+</code></pre>
+
+<p>Here, we use BooleanField from django.db.models.fields, import like this:</p>
+
+<pre><code>from django.db.models.fields import BooleanField
+</code></pre>
+
+<p>For couchdb, we should extend Document class , and like this :</p>
+
+<pre><code>class CouchdbModel(Document):
+ document_type = TextField()
+ status = BooleanField()
+ ......
+</code></pre>
+
+<p>Here, we use BooleanField from couchdb.mapping import like this:</p>
+
+<pre><code>from couchdb.mapping import  BooleanField
+</code></pre>
+
+<p>It looks well, unfortunately we used both in 1 python file, and the pycharm auto imported the first one, when we create database it doesn&#8217;t throw out any exception , BooleanField object in different package is totally different.</p>
+
+<p>So, be careful auto import function in your IDE !</p>
+
+<p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-02-at-7.50.56-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-02-at-7.50.56-PM.png" alt="happy or sad ?" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/01/an-interesting-command-in-macos/">An Interesting Command in MacOS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-01T23:40:55+08:00" pubdate data-updated="true">Nov 1<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>Today i just knew a funny command in mac os, it is command say.</strong></p>
+
+<p><strong>This command can convert the input text to audible speech, for example :</strong></p>
+
+<p><code>say hello world</code></p>
+
+<p><strong>you can hear a male voice to read it .Also you can let it read a file using &#8220;-f file_name&#8221;, also you can record the voice to the file using &#8220;-o output.aiff &#8221; .</strong></p>
+
+<p><strong>The most interesting is that using &#8220;-v voice&#8221; to use different voice, for example:</strong></p>
+
+<p><strong><code>say -v good hello world</code></strong> # high pitch</p>
+
+<p><code>say -v bad hello world</code> #low pitch</p>
+
+<p><strong>Here is a list of the other voices you can also use:</strong>
+<strong>Female Voices</strong>
+$ say -v Agnes &#8220;hello world&#8221;
+$ say -v Kathy &#8220;hello world&#8221;
+$ say -v Princess &#8220;hello world&#8221;
+$ say -v Vicki &#8220;hello world&#8221;
+$ say -v Victoria &#8220;hello world&#8221;
+<strong>Male Voices</strong>
+$ say -v Bruce &#8220;hello world&#8221;
+$ say -v Fred &#8220;hello world&#8221;
+$ say -v Junior &#8220;hello world&#8221;
+$ say -v Ralph &#8220;hello world&#8221;
+<strong>Novelty Voices</strong>
+$ say -v Albert &#8220;hello world&#8221;
+$ say -v &#8220;Bad News&#8221; &#8220;hello world&#8221;
+$ say -v Bahh &#8220;hello world&#8221;
+$ say -v Bells &#8220;hello world&#8221;
+$ say -v Boing &#8220;hello world&#8221;
+$ say -v Bubbles &#8220;hello world&#8221;
+$ say -v Cellos &#8220;hello world&#8221;
+$ say -v Deranged &#8220;hello world&#8221;
+$ say -v &#8220;Good News&#8221; &#8220;hello world&#8221;
+$ say -v Hysterical &#8220;hello world&#8221;
+$ say -v &#8220;Pipe Organ&#8221; &#8220;hello world&#8221;
+$ say -v Trinoids &#8220;hello world&#8221;
+$ say -v Whisper &#8220;hello world&#8221;
+$ say -v Zarvox &#8220;hello world&#8221;</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -76,6 +672,26 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/12/31/20112012/">2011~2012</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/30/hash-code/">HashCode</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/10/devops/">DEVOPS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/08/the-next-30-days/">The next 30 days</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/06/what-i-want-to-be-in-next-5-years/">What I want to be in next 5 years ?</a>
+      </li>
     
   </ul>
 </section>

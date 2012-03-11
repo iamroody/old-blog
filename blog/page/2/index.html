@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>I am Roody</title>
+  <meta name="author" content="Roody">
+
+  
+  <meta name="description" content="Do you know how the system understand which program to run when you type a command ? Maybe you will say that system will look up the $PATH or check &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://iamroody.github.com/blog/page/2">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="I am Roody" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">I am Roody</a></h1>
+  
+    <h2>This is my blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:iamroody.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/01/sequence-of-find-a-command-in-shell/">Sequence of Find a Command in Shell</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-01T23:18:26+08:00" pubdate data-updated="true">Nov 1<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Do you know how the system understand which program to run when you type a command ?</p>
+
+<p>Maybe you will say that system will look up the $PATH or check in the alias or somewhere else.</p>
+
+<p>In the following link, it displays the detailed sequence.</p>
+
+<p>How Linux or UNIX Understand which program to run – PART I</p>
+
+<p><a href="http://www.cyberciti.biz/tips/how-linux-or-unix-understand-which-program-to-run-part-i.html">http://www.cyberciti.biz/tips/how-linux-or-unix-understand-which-program-to-run-part-i.html</a></p>
+
+<p>Sequence(use date command):</p>
+
+<ol>
+<li><p>If there exists a shell FUNCTION date() execute it and stop.</p></li>
+<li><p>If there exists a shell builtin date command, execute it and stop</p></li>
+<li><p>If there exists an entry in hash table for date command execute it and stop.</p></li>
+<li><p>if there exists a bin file named date in PATH variable.</p></li>
+<li><p>If above all method fails then SHELL will return error &#8220;Command not found&#8221; and always exit with 127 status code</p></li>
+</ol>
+
+
+<p>What&#8217;s hash table in bash shell ?</p>
+
+<p>A HASH table is nothing but some sort of caching mechanism to speed up things. For each command, the full file name of the command is determined by searching the directories in $PATH variable and remembered by shell in HASH table. You can type hash command in your console to see the content of hash table, also, you could use &#8220;hash -r &#8221; to remove all the memories.</p>
+
+<p>The following link is a example to show a complete sequence adopted by BASH Shell</p>
+
+<p>How BASH Shell Command Search Sequence Works</p>
+
+<p><a href="http://www.cyberciti.biz/tips/an-example-how-shell-understand-which-program-to-run-part-ii.html">http://www.cyberciti.biz/tips/an-example-how-shell-understand-which-program-to-run-part-ii.html</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/14/whats-wrong-with-me/">What&#8217;s Wrong With Me?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-14T00:09:44+08:00" pubdate data-updated="true">Sep 14<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>&#8220;What&#8217;s wrong with me ?&#8221;</p>
+
+<p>最近这些日子，我一直在问我这样的问题，因为诸多不顺。常常说人品差，看来，真的是轮到我了。我甚至开始质疑我的学习能力和解决问题的能力。</p>
+
+<p>仔细想想从第一次独立的做story开始就一直缠着我</p>
+
+<p>记得很清楚那是关于广告的story，要求在cucumber test里面选中页面上所有的category 和 tag，然后来看一下广告的url中是否包含了所有的category和tag。看起来没有什么问题，可真正开始测试的时候，悲剧了。先要到达该space页面，一次点开所有的“show more”连接（因为有些tag是被隐藏到show more里面的），然后选中所有的category和tag。第一个问题出现了，有一个tag死活选不上，原因是在一个space页面，不同的category里面，存在着名字相同的tag，而我们处理是只会选中最先出现的那个，废了半天劲搞不定，去和客户沟通，客户也认为在不同的category里面不应该出现重复的tag，OK，干掉重复的，更新我们的taxonomy.第二个问题出现了，如何来验证广告的url里面包含了所有的tag和category呢？由于rul里面的category的顺序和页面取的不一样，并且tag的顺序也不同，有canonical顺序还有其他的排序规则，无法来比对是否一直，此时选用了一个非常费时的方法，将其打散成hashset，然后比对两个是否一直，这样就忽略了顺序所带来的干扰。最终，我花了好几天的时间在这个cucumber test的验证上，而真正的实现java代码只用了一个多小时的时间，:(</p>
+
+<p>接跟着是一个在主页面上添加“getting started link”的story，实现起来比较简单，然而准备show case的时候，被发觉cucumber test中的测试数据是写死的，而不是从csv中读取的（我是照着之前seo meta的实现方法来做的），这就意味着如果CSV数据发生变化的时候，cucumber test会失败。这个也没有解决，作为technical debt 留下来了。：(</p>
+
+<p>再一个story是关于search criteria的，当准备show case的时候，客户说他们还没想好应该怎么来展现，结果给block掉了。另外，我自认为写的很好的cucumber feature，结果也被批了，原因是，太具体，没有真正体现出客户所在意的business value。:(</p>
+
+<p>Thanks to 客户的“innovation day”，我们有了两天的时间来重构代码，我和pair领到的task是去除掉StubDomainFactory这个类，在测试中应该构建带有含义的测试数据，而不使用包含有很多依赖关系的stub的真实数据。重构吧，全工程搜索了一下，有200多处调用，我们是一个个测试的改，一处处的剔除。一天没改完，我周末还跑公司改了两天才搞定，周一早上diff的时候，以为应该受到表扬，结果被骂了。修改的太分散，重复代码很多，命名不够清晰等等&#8230;.sigh，谁让我改代码的时候，没有思考呢？悲剧！:( .</p>
+
+<p>穿插着几个小story，然后进入了一个超级大的story-tag fetcher中，pair的技术超强，“佛当杀佛，人当杀人”，但由于story涉及的scope过大，另外我这个pair的层次低，我们也曾连续两个星期加班（跟公司文化冲突,:(），在这个story里面学到了非常多的东西，里面碰到了很多的难题，都被pair一一化解。story还没结束，我就switch 出来了。在后面做了一个关于这个story的session，也是讲的一塌糊涂，有些关键的地方还是弄错了，用prezi做的ppt也没有事先过一遍就去讲，把大家也晃的不行，失败。：（</p>
+
+<p>还有那么一次，周末跑到公司，push了代码，结果把build搞红了，休了半天没搞定，找SuoQin帮忙才ok，sigh，囧。</p>
+
+<p>接着到了我现在做的这个story，把项目中的js/css文件合并，压缩，打到war包中，上周二开始搞得，用了yahoo的yui_compressor的库来压缩，在buildfile里面也都用着正常，也写成task形式来调用。但什么时候执行呢？因为我们平时写css或js，肯定不能用minify的版本，只有在最终打包发布的时候才应该做这些compress的操作。我们很早就想出了方法来打包，</p>
+
+<p>压缩js/css文件到某个temp文件夹中，然后打包的时候，再包含进来，最后把这个temp文件夹给删除掉，然而这种方法不好地方是破坏了package的过程。我们希望操控target文件夹，能在buildfile里面对package(:war)的过程中添加包含指定的压缩过后的js/css文件夹，写成类似package(:war).tap do |war|  ******* end的形式，谁知道，这种方法不行，现象是一开始buildr就会调用tap中执行的代码（buildr clean也会调用tap中的代码），而到真正打包的时候却又不再执行tap里面的代码，（也可能是我们搞错了，反正是整了好长时间），读buildr的文档找不到用法，只能去读源码，后来发现是tap是yild的buildr本身，而非我们所想象的package对象，buildr中的package是一个module。然后各种问题，纠结在一起，始终不得其解。同时，客户又抛来了新的问题，他们希望把所有的js/css文件合并成一个文件来减少http请求，oh，我们把公共的js文件合并成globle.js，而在某些页面上出现的js文件，我们是保留下来了，同时，系统中用了大量的jquery以及其插件，这样就导致了不管咋合并，都始终有7、8个js。后来在网上又是一阵搜索，才发现一个把所有js文件请求合并成一个http request 的方法，sigh，还在努力。。。。</p>
+
+<p>还有，在做TWU的作业时，因为有swich的语句，想要将其删除掉，refator书上说用多态ok，但始终得根据条件生成相应的对象，后来又新加了factory来生成对象，并在factory中加上hashmap来对应不同的对象，但始终觉得这样的方法有点不太对，特别是，一初始化factory就要把这些对象都new出来，放到map里面。:( .</p>
+
+<p>sigh，总结这么一段时间的经历，感觉就是一个字：挫！没有那种干干净净、清清爽爽写代码，以及看着story 被sign off的那种快感，总感觉憋屈的很，碰到技术难题，花费居多的时间，还解决不了，效率极低。就像今天，感觉像是晃晃悠悠就过来了，也没解决到什么实际的问题。</p>
+
+<p>so，what&#8217;s wrong with me ? 咋这么囧呢？</p>
+
+<p>ps:</p>
+
+<p>写完上面的东西之后，发现网也挂了，blog始终上不去，囧啊。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/08/22/learned-from-pair-programming/">Learned From Pair-programming</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-22T00:05:28+08:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://wangyan.info/wp-content/uploads/2011/08/pair.jpeg"><img src="http://wangyan.info/wp-content/uploads/2011/08/pair.jpeg" alt="" /></a>
+刚刚进入公司时，没有预想中的培训，而直接进入了项目组，直接投入到Story的开发当中。作为新人，碰到了诸多的困难，不熟悉的开发环境（MAC和Intellij），全新的开发流程和风格（Agile），让人困惑的项目架构，各种前沿的技术知识，甚至还没有从学生的状态中转换过来。如何快速的融入到团队？如何快速的为项目作出贡献？最终如何快速的成长？也许Pair-Programming是个答案。</p>
+
+<p>Pair-Programming</p>
+
+<p>Pair Programming是一个编程模式(Programming pattern)。两个程序员(driver &amp; observer)并排坐在一台电脑前，面对同一个显示器，使用同一个键盘，同一个鼠标一起工作。他们一起分析，一起设计，一起写测试例子，一起编码，一起单元测试，一起整合测试(Integration Test)，一起写文档等，基本上所有的开发环节都一齐肩并肩地，平等地，互补地进行开发工作。[1]</p>
+
+<p>Pair-Programming所带来的好处包括更快的知识共享、较高的效费比（cost-effective）、减小人员流动带来的风险、高质量的代码、更强的问题解决能力、更多的信心和各方面的满足感。在Pair-Programming中所需要注意的问题也很多，比如及时的角色轮换，pair之前进行详细的任务分解，合理的分配pair，观点要保持统一等等。</p>
+
+<p>当然，Pair-Programming也会被质疑到工作效率低，不同水平的人员之间难以配合，个人不同的开发习惯和最后的人空间等各种常见的问题。不管怎样，应该根据团队实际的情况出发，因为就像《人件》中所说的，人才是软件开发中最核心，也是最需要花时间去关注的事情。</p>
+
+<p>What are you trying to learn?</p>
+
+<p>Pair开始了，一开始是茫然的，看着Pair在键盘上跟飞似地，IDE跳来跳去，窗口切来切去，心里面那个羡慕啊。一开始都是在看Pair写代码，自己只能充当一个名义上的Observer，并且有时候不知道在看什么，常常会跑神。直到有一天知道，在pair的时候，常常问自己“What are you trying to learn?”，会让你更加清楚你想要什么，你在做什么，让pair更加的有效率。</p>
+
+<p>What I have learned From Pair ?</p>
+
+<p>从入职到现在的一个月里，和组里面的大多数人都Pair过，Pair不同的开发习惯和所擅长的知识领域让我受益匪浅。</p>
+
+<p>总结收获如下：</p>
+
+<p>1.良好的开发习惯</p>
+
+<p>一开始常常出现如下的情况：</p>
+
+<p>A.当我终于可以拿着键盘和鼠标开始写代码的时候，就被blame了：要学着丢掉鼠标，使用快捷键来提高自己的开发效率，尤其是intellij里面各种用于重构的shortcut&#8230;.</p>
+
+<p>B.当我攒了一大堆的代码准备提交的时候，就被打了：要及时的commit</p>
+
+<p>C.当我拿着Story卡就开始敲代码的时候，就被骂了：要先进行任务分解，清楚自己每一步都在干什么</p>
+
+<p>D.当我直奔着写方法和设计实现细节的时候，就被K了：要贯彻TDD的思想，小步快跑</p>
+
+<p>2.写出高质量的代码</p>
+
+<p>曾经感觉写的还可以的代码，敲出来就会被鄙视一顿，Pair总会告诉你有更好的方式来解决这个问题，哪些变量应该抽出去，哪部分应该写成接口，一步步的去除掉代码中的bad smell，逼着自己写出更好的代码。并且，会常常进行代码的重构，作为一个Pair的Observer会从更高的层面来对代码进行整理，好代码都是这么出来的。</p>
+
+<p>3.知识的共享</p>
+
+<p>Pair-Programming最大的好处，于是这一个月，跟索大师学BDD，跟超女学UI，跟超男学Chef，跟郑大学写高质量的代码，跟杨栋学习快速解决问题的方法，跟文博学习软件架构和重构。</p>
+
+<p>从Pair身上可以学到太多自己不懂的知识和技术，更快速的扩展自己的知识边界。</p>
+
+<p>4.对项目的理解和熟悉</p>
+
+<p>在别的公司，新人进来往往有至少2个月的培训期，真正开始贡献代码往往都在3个月以后了。而通过和Pair一起写代码，能够非常快速的完成对项目代码的理解和熟悉，能够以最快的速度投入到开发中去。</p>
+
+<p>5.程序员的素养</p>
+
+<p>在Pair-Programming的过程中，一个人的知识技术水平、反映能力、解决问题的能力会非常清晰的暴露出来，变得公开和透明。 而像所说的程序员有四怕：1) 怕自己看上去傻 2) 怕被认为是没用的 3) 怕自己变的不重要（过时）4) 怕自己不够好。 Pair时会让人很有压力，会逼迫着你去学习、提升自己、证明自己。感谢和我一起pair过的同事，能够容忍我那么多低级的错误和傻笨的表现，我会继续努力，成为一个专业和成熟的TW的developer。</p>
+
+<p>6.这是两个人的事</p>
+
+<p>在开发的过程中，常常会碰见很多让人头痛的技术难题，当一个人面对时，往往会有很大的压力，常常会走极端，甚至会突然间的奔溃或抓狂。Pair让这些难题变成两个人的事情，既缓解了压力，并且增强了解决问题的能力。同甘苦、共患难，在开发过程中同样存在，能够增强对项目的责任心和团队整体的协作能力。</p>
+
+<p>Thanks to pair， I learned a lot ！</p>
+
+<p>引用一个前辈的话：</p>
+
+<p>我们Pair 做任何一件事情。</p>
+
+<p>——ThoughtWorks 西安Office</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/08/14/a-good-union-test/">A Good Union Test</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-14T17:22:43+08:00" pubdate data-updated="true">Aug 14<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Team上周的small talk的话题是一个好的单元测试应该是什么样子的，应该有什么样的准则，以下是我们所总结的其中一些rules。</p>
+
+<p><strong>一个测试包括：</strong></p>
+
+<p>1.预置条件（Given）</p>
+
+<p>2.执行  (When)</p>
+
+<p>3.Assert （Then）</p>
+
+<p><strong>好的测试应该具备</strong></p>
+
+<p>1.简洁明了的断言</p>
+
+<p>2.反应测试目的、容易理解的测试方法名</p>
+
+<p>3.独立的测试，尽可能的减少测试之间的依赖性</p>
+
+<p>4.逻辑简单，避免出现“if else”等等分支</p>
+
+<p>5.排除测试中的不确定因素，如时间、多线程</p>
+
+<p>6.减少对网络、文件、数据库等的依赖性</p>
+
+<p>7.唯一的测试点</p>
+
+<p>InfoQ上也有一篇关于单元测试的文章</p>
+
+<pre><code>&lt;a href="http://www.infoq.com/cn/news/2009/07/Better-Unit-Tests" rel="permalink"&gt;更好的单元测试准则&lt;/a&gt; http://www.infoq.com/cn/news/2009/07/Better-Unit-Tests
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/08/14/story-development/">Story Development</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-14T17:08:49+08:00" pubdate data-updated="true">Aug 14<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Story development include the following steps:</p>
+
+<p><strong>1.Get story card</strong></p>
+
+<p>When you get a new story card, first you should analyze and understand the detail feature or function. If possible ,confirm the requirement with BA or QA. And most important ,you should know the rationality of story, communicate with client，don&#8217;t spend too much time on the extrem or BT requirement .</p>
+
+<p><strong>2.Develop</strong></p>
+
+<p>First,Decompose the story into several tasks which can be finished in limited time, but the granularity depends on you and your pairs.</p>
+
+<p>Second, begin to write tests, using BDD and TDD to implement the function.</p>
+
+<p>Third, Refractor your code and commit/push it.</p>
+
+<p><strong>3.Show case</strong></p>
+
+<p>1.Prepare the environment for the test according to AC.</p>
+
+<p>2.Test it at least 2 times by yourself.</p>
+
+<p>3.Show it to QA.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/08/14/my-10-bad-habits-in-the-first-month/">My 10 Bad Habits in the First Month</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-14T16:11:46+08:00" pubdate data-updated="true">Aug 14<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In the first month of my working life, i have suffered a huge change from a student to a thoughtworker. No pains no gains, when my pairs and PM told me that it should do like this, I find some bad habits of mine during the development . Not top 10 bad habits,just 10, no more meanings.</p>
+
+<p>1.Throw mouse and start to enjoy the keyboard shortcuts,let manipulation could get up your mind..As a thoughtworker, that&#8217;s the first thing in develop.</p>
+
+<p>2.Don&#8217;t be afraid to ask your pair questions. The greatest advantage of pair programing is  knowledge sharing,so ask more questions if you don&#8217;t understand, you will grow quickly.</p>
+
+<ol>
+<li><p>Work with your pair and focus the current work.Sometimes, l turn my attention to my last story to fix some bugs when my pair and me have started a new story, In this case, focus on current story or work with my pair to resolve the bugs together, don&#8217;t be a Lone Ranger</p></li>
+<li><p>Task Decomposition before develop. It will make you understand what are you doing.</p></li>
+<li><p>Diff your code before you commit it, ensure the code you have changed is what you want.</p></li>
+<li><p>Do the things by priority</p></li>
+<li><p>Write a clear commit instead of &#8220;make a lot of changes&#8221;</p></li>
+</ol>
+
+
+<p>8.When you finish a separate step or function , commit it to your local machine, don&#8217;t commit a lot in one time.</p>
+
+<ol>
+<li>Must run the whole build and all test before push code</li>
+</ol>
+
+
+<p>10.Push your code before get off work</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/12/31/20112012/">2011~2012</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/30/hash-code/">HashCode</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/10/devops/">DEVOPS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/08/the-next-30-days/">The next 30 days</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/06/what-i-want-to-be-in-next-5-years/">What I want to be in next 5 years ?</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Roody -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

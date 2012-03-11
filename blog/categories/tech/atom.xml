@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tech | I am Roody]]></title>
+  <link href="http://iamroody.github.com/blog/categories/tech/atom.xml" rel="self"/>
+  <link href="http://iamroody.github.com/"/>
+  <updated>2012-03-11T15:41:44+08:00</updated>
+  <id>http://iamroody.github.com/</id>
+  <author>
+    <name><![CDATA[Roody]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[DEVOPS]]></title>
+    <link href="http://iamroody.github.com/blog/2011/11/10/devops/"/>
+    <updated>2011-11-10T00:03:23+08:00</updated>
+    <id>http://iamroody.github.com/blog/2011/11/10/devops</id>
+    <content type="html"><![CDATA[<p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-09-at-11.41.35-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-09-at-11.41.35-PM-300x193.png" alt="" /></a></p>
+
+<p>Today, Cosmin gave us a session about devops, but the session didn't tell too much about what's the devops, it focused on another aspect about project. When the project's development is finished, who will care about the rest works, including how to deploy , maintain, upgrade, monitor and so on.  The session talked a lot about what the operation team need and do.</p>
+
+<p>You can find the <a href="http://en.wikipedia.org/wiki/DevOps">definition</a> about devops on wikipedia, but the best way to learn devops is practice， try to do some devops things on your local machine, for example chef, pupet, build pipeline, one click deploy and so on .</p>
+
+<p>I am really interested in devops, i will start to learn from now no.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The next 30 days]]></title>
+    <link href="http://iamroody.github.com/blog/2011/11/08/the-next-30-days/"/>
+    <updated>2011-11-08T23:21:22+08:00</updated>
+    <id>http://iamroody.github.com/blog/2011/11/08/the-next-30-days</id>
+    <content type="html"><![CDATA[<p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-08-at-11.23.19-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-08-at-11.23.19-PM.png" alt="" /></a></p>
+
+<p>Michael shared a TED video named <a href="http://v.youku.com/v_show/id_XMjgxNDA4OTIw.html">"the next 30 days"</a>, it talks about make some personal plan in next 30 days.</p>
+
+<p>Because whether you like, the following days will go away, so why not do some thing that you really want to do but never done. In next 30 days, try to insist on it every day . In this way, the next 30 days become more meaningful for you ,and worth memory.</p>
+
+<p>After that video, i decided write blog every day in next 30 days.</p>
+
+<p>It really works well, i wrote about 5 blogs at first way. But last night i forgot to write it, why? i worked on pair stairs until 3:00 AM. But i still should write it in the morning , not delayed it to the last minutes.</p>
+
+<p>So, what's your plan for next 30 days ?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What I want to be in next 5 years ?]]></title>
+    <link href="http://iamroody.github.com/blog/2011/11/06/what-i-want-to-be-in-next-5-years/"/>
+    <updated>2011-11-06T23:54:46+08:00</updated>
+    <id>http://iamroody.github.com/blog/2011/11/06/what-i-want-to-be-in-next-5-years</id>
+    <content type="html"><![CDATA[<p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-06-at-11.52.51-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-06-at-11.52.51-PM.png" alt="" /></a>
+Since the first day i entered into company, i always ask myself this question, The process of thinking makes me be aware of what and why i am doing this currently.</p>
+
+<p>For me, different stages have different answers even though i just worked here for 4 months. In the first 2 months, i just thought about how to survive in TW, and avoid being fired in 6 months' probation period. I want to write clean code ,learn more new things about software development, pursue high quality software, but I don't have clear career plan. During TWU, i began to know what i should do and how i prepare for that.</p>
+
+<p>From a thoughtworker's blog, i know that one person's future depends on fit that you between your company's core values. Person's development is related to your company's development. What's your company's core offering ? What can you offer values in those offerings?</p>
+
+<p>The following picture is thoughtworks' core offering:
+<a href="http://wangyan.info/wp-content/uploads/2011/11/core-offering.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/core-offering.png" alt="" /></a></p>
+
+<p>thoughtworks' core values are software excellence, Methodology around it is continuous design and delivery . the left side is consulting, including experience design, continuous improvement and technical skills. The right side is ALM , including Go, Mingle and Twist.</p>
+
+<p>According to core offerings, i make a simple plan for myself:</p>
+
+<p>In the first 2 years , i will focus on continuous design and delivery, learn the enough technical skills to handle with daily work easily, contribute velocity , dive into some special tech areas which i am interested or more promising, for example , i am interested in UX and DEVOPS. I prefer to work in offshore delivery project. It will great that if the client just like REA that so cooperative and kind. I hope have enough business trip to practice myself communicating with clients.</p>
+
+<p>In the third or fourth year, i hope try some consulting task and have a specify technical that i am good at. I prefer do more BA's work at that period and hope have a chance to participate in a project from begin to end. If i have a chance i want to more work on tw's studio.</p>
+
+<p>In the fifth year, i hope i can still work in thoughtworks. At that time , i hope i can be good at consulting work , give clients awesome technical advice, be a tech leader in a project.</p>
+
+<p>I hope everyday i can be better than yesterday !</p>
+
+<p>Reference:
+我的未来在哪里？ http://www.tuzei8.com/page/3/</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PechaKucha]]></title>
+    <link href="http://iamroody.github.com/blog/2011/11/05/pechakucha/"/>
+    <updated>2011-11-05T23:54:42+08:00</updated>
+    <id>http://iamroody.github.com/blog/2011/11/05/pechakucha</id>
+    <content type="html"><![CDATA[<p>[gallery]
+In thoughtworks university , every wednesday is PechaKucha night. At that night, presenter will give a presentation based on 20 slides, forward automatically in every 20 seconds. The topic can be anything that you know well or interested, such as drink, mind, movie star, food , tea, sports and so on.</p>
+
+<p>In traditional presentation, presenter always talked a lot and miss the key point of subject. PechaKucha makes you using a simple and refined way to transfer new knowledge or concept , and it won't take a long time ,just 400 seconds.</p>
+
+<p>PechaKucha Night was devised in Tokyo in February 2003 as an event for young designers to meet, network, and show their work in public. It has turned into a massive celebration, with events happening in hundreds of cities around the world, inspiring creatives worldwide. Drawing its name from the Japanese term for the sound of "chit chat", it rests on a presentation format that is based on a simple idea: 20 images x 20 seconds. It's a format that makes presentations concise, and keeps things moving at a rapid pace.</p>
+
+<p>PechaKucha official website:  http://www.pecha-kucha.org/</p>
+
+<p>This is my PechaKucha PPT</p>
+
+<p><strong><a href="http://www.slideshare.net/iamroody/hiking-10040272">Hiking</a></strong></p>
+
+<p>View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/iamroody">iamroody</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[In-memory database]]></title>
+    <link href="http://iamroody.github.com/blog/2011/11/04/in-memory-database/"/>
+    <updated>2011-11-04T23:59:34+08:00</updated>
+    <id>http://iamroody.github.com/blog/2011/11/04/in-memory-database</id>
+    <content type="html"><![CDATA[<p><strong>Definition</strong>
+An in-memory database is a database that runs entirely in main memory, without touching a disk. Often they run as an embedded database: created when a process starts, running embedded within that process, and is destroyed when the process finishes.
+(From Martin Fowler , <a href="http://martinfowler.com/bliki/InMemoryTestDatabase.html">InMemoryTestDatabase</a>)</p>
+
+<p><strong>Contrast</strong>
+Much faster than disk-optimized database, because simpler algorithms,fewer CPU instructions, fewer I/O reading activity.
+Lack support for durability portion of ACID, because it will lose all information when lose power or reset. But they can add durability via using some mechanisms, such as snapshot files,transaction logging,Non-volatile random, access memory, high availability.</p>
+
+<p><strong>When to use it ?</strong>
+Using in-memory database in a enterprise application can dramatically reduce build time
+Not touching real database in unit test. it is safe for real database, keep database independent and clean. Don't worry about the sequence of test caused different db result .</p>
+
+<p><strong>Which database ?</strong>
+<a href="http://www.sqlite.org/">Sqlite</a>
+<a href="http://hsqldb.org/">HSQLDB</a>
+<a href="http://www.mysql.com/products/cluster/">MySQL Cluster</a>
+<a href="http://www.mcobject.com/extremedbfamily.shtml">eXtremeDB</a>
+<a href="http://www.oracle.com/technetwork/database/timesten/overview/index.html">Oracle TimesTen In-Memory Databas</a>
+<a href="http://www.sybase.com/manage/in-memory-databases">Sybase in-memory databases</a>
+<a href="http://www-01.ibm.com/software/data/soliddb/">solidDB</a></p>
+
+<p><strong>Reference</strong>
+<a href="http://martinfowler.com/bliki/InMemoryTestDatabase.html">InMemoryTestDatabase</a>
+<a href="http://en.wikipedia.org/wiki/In-memory_database">In-memory database</a></p>
+]]></content>
+  </entry>
+  
+</feed>

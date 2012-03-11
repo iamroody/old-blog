@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>What's wrong with me? - I am Roody</title>
+  <meta name="author" content="Roody">
+
+  
+  <meta name="description" content="&#8220;What&#8217;s wrong with me ?&#8221; 最近这些日子，我一直在问我这样的问题，因为诸多不顺。常常说人品差，看来，真的是轮到我了。我甚至开始质疑我的学习能力和解决问题的能力。 仔细想想从第一次独立的做story开始就一直缠着我 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://iamroody.github.com/blog/2011/09/14/whats-wrong-with-me">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="I am Roody" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">I am Roody</a></h1>
+  
+    <h2>This is my blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:iamroody.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">What's Wrong With Me?</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-14T00:09:44+08:00" pubdate data-updated="true">Sep 14<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>&#8220;What&#8217;s wrong with me ?&#8221;</p>
+
+<p>最近这些日子，我一直在问我这样的问题，因为诸多不顺。常常说人品差，看来，真的是轮到我了。我甚至开始质疑我的学习能力和解决问题的能力。</p>
+
+<p>仔细想想从第一次独立的做story开始就一直缠着我</p>
+
+<p>记得很清楚那是关于广告的story，要求在cucumber test里面选中页面上所有的category 和 tag，然后来看一下广告的url中是否包含了所有的category和tag。看起来没有什么问题，可真正开始测试的时候，悲剧了。先要到达该space页面，一次点开所有的“show more”连接（因为有些tag是被隐藏到show more里面的），然后选中所有的category和tag。第一个问题出现了，有一个tag死活选不上，原因是在一个space页面，不同的category里面，存在着名字相同的tag，而我们处理是只会选中最先出现的那个，废了半天劲搞不定，去和客户沟通，客户也认为在不同的category里面不应该出现重复的tag，OK，干掉重复的，更新我们的taxonomy.第二个问题出现了，如何来验证广告的url里面包含了所有的tag和category呢？由于rul里面的category的顺序和页面取的不一样，并且tag的顺序也不同，有canonical顺序还有其他的排序规则，无法来比对是否一直，此时选用了一个非常费时的方法，将其打散成hashset，然后比对两个是否一直，这样就忽略了顺序所带来的干扰。最终，我花了好几天的时间在这个cucumber test的验证上，而真正的实现java代码只用了一个多小时的时间，:(</p>
+
+<p>接跟着是一个在主页面上添加“getting started link”的story，实现起来比较简单，然而准备show case的时候，被发觉cucumber test中的测试数据是写死的，而不是从csv中读取的（我是照着之前seo meta的实现方法来做的），这就意味着如果CSV数据发生变化的时候，cucumber test会失败。这个也没有解决，作为technical debt 留下来了。：(</p>
+
+<p>再一个story是关于search criteria的，当准备show case的时候，客户说他们还没想好应该怎么来展现，结果给block掉了。另外，我自认为写的很好的cucumber feature，结果也被批了，原因是，太具体，没有真正体现出客户所在意的business value。:(</p>
+
+<p>Thanks to 客户的“innovation day”，我们有了两天的时间来重构代码，我和pair领到的task是去除掉StubDomainFactory这个类，在测试中应该构建带有含义的测试数据，而不使用包含有很多依赖关系的stub的真实数据。重构吧，全工程搜索了一下，有200多处调用，我们是一个个测试的改，一处处的剔除。一天没改完，我周末还跑公司改了两天才搞定，周一早上diff的时候，以为应该受到表扬，结果被骂了。修改的太分散，重复代码很多，命名不够清晰等等&#8230;.sigh，谁让我改代码的时候，没有思考呢？悲剧！:( .</p>
+
+<p>穿插着几个小story，然后进入了一个超级大的story-tag fetcher中，pair的技术超强，“佛当杀佛，人当杀人”，但由于story涉及的scope过大，另外我这个pair的层次低，我们也曾连续两个星期加班（跟公司文化冲突,:(），在这个story里面学到了非常多的东西，里面碰到了很多的难题，都被pair一一化解。story还没结束，我就switch 出来了。在后面做了一个关于这个story的session，也是讲的一塌糊涂，有些关键的地方还是弄错了，用prezi做的ppt也没有事先过一遍就去讲，把大家也晃的不行，失败。：（</p>
+
+<p>还有那么一次，周末跑到公司，push了代码，结果把build搞红了，休了半天没搞定，找SuoQin帮忙才ok，sigh，囧。</p>
+
+<p>接着到了我现在做的这个story，把项目中的js/css文件合并，压缩，打到war包中，上周二开始搞得，用了yahoo的yui_compressor的库来压缩，在buildfile里面也都用着正常，也写成task形式来调用。但什么时候执行呢？因为我们平时写css或js，肯定不能用minify的版本，只有在最终打包发布的时候才应该做这些compress的操作。我们很早就想出了方法来打包，</p>
+
+<p>压缩js/css文件到某个temp文件夹中，然后打包的时候，再包含进来，最后把这个temp文件夹给删除掉，然而这种方法不好地方是破坏了package的过程。我们希望操控target文件夹，能在buildfile里面对package(:war)的过程中添加包含指定的压缩过后的js/css文件夹，写成类似package(:war).tap do |war|  ******* end的形式，谁知道，这种方法不行，现象是一开始buildr就会调用tap中执行的代码（buildr clean也会调用tap中的代码），而到真正打包的时候却又不再执行tap里面的代码，（也可能是我们搞错了，反正是整了好长时间），读buildr的文档找不到用法，只能去读源码，后来发现是tap是yild的buildr本身，而非我们所想象的package对象，buildr中的package是一个module。然后各种问题，纠结在一起，始终不得其解。同时，客户又抛来了新的问题，他们希望把所有的js/css文件合并成一个文件来减少http请求，oh，我们把公共的js文件合并成globle.js，而在某些页面上出现的js文件，我们是保留下来了，同时，系统中用了大量的jquery以及其插件，这样就导致了不管咋合并，都始终有7、8个js。后来在网上又是一阵搜索，才发现一个把所有js文件请求合并成一个http request 的方法，sigh，还在努力。。。。</p>
+
+<p>还有，在做TWU的作业时，因为有swich的语句，想要将其删除掉，refator书上说用多态ok，但始终得根据条件生成相应的对象，后来又新加了factory来生成对象，并在factory中加上hashmap来对应不同的对象，但始终觉得这样的方法有点不太对，特别是，一初始化factory就要把这些对象都new出来，放到map里面。:( .</p>
+
+<p>sigh，总结这么一段时间的经历，感觉就是一个字：挫！没有那种干干净净、清清爽爽写代码，以及看着story 被sign off的那种快感，总感觉憋屈的很，碰到技术难题，花费居多的时间，还解决不了，效率极低。就像今天，感觉像是晃晃悠悠就过来了，也没解决到什么实际的问题。</p>
+
+<p>so，what&#8217;s wrong with me ? 咋这么囧呢？</p>
+
+<p>ps:</p>
+
+<p>写完上面的东西之后，发现网也挂了，blog始终上不去，囧啊。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Roody</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-14T00:09:44+08:00" pubdate data-updated="true">Sep 14<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tech/'>tech</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://iamroody.github.com/blog/2011/09/14/whats-wrong-with-me/" data-via="" data-counturl="http://iamroody.github.com/blog/2011/09/14/whats-wrong-with-me/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/08/22/learned-from-pair-programming/" title="Previous Post: Learned from pair-programming">&laquo; Learned from pair-programming</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/11/01/sequence-of-find-a-command-in-shell/" title="Next Post: sequence of find a command in shell">sequence of find a command in shell &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/12/31/20112012/">2011~2012</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/30/hash-code/">HashCode</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/10/devops/">DEVOPS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/08/the-next-30-days/">The next 30 days</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/06/what-i-want-to-be-in-next-5-years/">What I want to be in next 5 years ?</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Roody -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

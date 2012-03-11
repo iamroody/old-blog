@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Learned from pair-programming - I am Roody</title>
+  <meta name="author" content="Roody">
+
+  
+  <meta name="description" content="刚刚进入公司时，没有预想中的培训，而直接进入了项目组，直接投入到Story的开发当中。作为新人，碰到了诸多的困难，不熟悉的开发环境（MAC和Intellij），全新的开发流程和风格（Agile），让人困惑的项目架构，各种前沿的技术知识，甚至还没有从学生的状态中转换过来。如何快速的融入到团队？ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://iamroody.github.com/blog/2011/08/22/learned-from-pair-programming">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="I am Roody" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">I am Roody</a></h1>
+  
+    <h2>This is my blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:iamroody.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Learned From Pair-programming</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-22T00:05:28+08:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://wangyan.info/wp-content/uploads/2011/08/pair.jpeg"><img src="http://wangyan.info/wp-content/uploads/2011/08/pair.jpeg" alt="" /></a>
+刚刚进入公司时，没有预想中的培训，而直接进入了项目组，直接投入到Story的开发当中。作为新人，碰到了诸多的困难，不熟悉的开发环境（MAC和Intellij），全新的开发流程和风格（Agile），让人困惑的项目架构，各种前沿的技术知识，甚至还没有从学生的状态中转换过来。如何快速的融入到团队？如何快速的为项目作出贡献？最终如何快速的成长？也许Pair-Programming是个答案。</p>
+
+<p>Pair-Programming</p>
+
+<p>Pair Programming是一个编程模式(Programming pattern)。两个程序员(driver &amp; observer)并排坐在一台电脑前，面对同一个显示器，使用同一个键盘，同一个鼠标一起工作。他们一起分析，一起设计，一起写测试例子，一起编码，一起单元测试，一起整合测试(Integration Test)，一起写文档等，基本上所有的开发环节都一齐肩并肩地，平等地，互补地进行开发工作。[1]</p>
+
+<p>Pair-Programming所带来的好处包括更快的知识共享、较高的效费比（cost-effective）、减小人员流动带来的风险、高质量的代码、更强的问题解决能力、更多的信心和各方面的满足感。在Pair-Programming中所需要注意的问题也很多，比如及时的角色轮换，pair之前进行详细的任务分解，合理的分配pair，观点要保持统一等等。</p>
+
+<p>当然，Pair-Programming也会被质疑到工作效率低，不同水平的人员之间难以配合，个人不同的开发习惯和最后的人空间等各种常见的问题。不管怎样，应该根据团队实际的情况出发，因为就像《人件》中所说的，人才是软件开发中最核心，也是最需要花时间去关注的事情。</p>
+
+<p>What are you trying to learn?</p>
+
+<p>Pair开始了，一开始是茫然的，看着Pair在键盘上跟飞似地，IDE跳来跳去，窗口切来切去，心里面那个羡慕啊。一开始都是在看Pair写代码，自己只能充当一个名义上的Observer，并且有时候不知道在看什么，常常会跑神。直到有一天知道，在pair的时候，常常问自己“What are you trying to learn?”，会让你更加清楚你想要什么，你在做什么，让pair更加的有效率。</p>
+
+<p>What I have learned From Pair ?</p>
+
+<p>从入职到现在的一个月里，和组里面的大多数人都Pair过，Pair不同的开发习惯和所擅长的知识领域让我受益匪浅。</p>
+
+<p>总结收获如下：</p>
+
+<p>1.良好的开发习惯</p>
+
+<p>一开始常常出现如下的情况：</p>
+
+<p>A.当我终于可以拿着键盘和鼠标开始写代码的时候，就被blame了：要学着丢掉鼠标，使用快捷键来提高自己的开发效率，尤其是intellij里面各种用于重构的shortcut&#8230;.</p>
+
+<p>B.当我攒了一大堆的代码准备提交的时候，就被打了：要及时的commit</p>
+
+<p>C.当我拿着Story卡就开始敲代码的时候，就被骂了：要先进行任务分解，清楚自己每一步都在干什么</p>
+
+<p>D.当我直奔着写方法和设计实现细节的时候，就被K了：要贯彻TDD的思想，小步快跑</p>
+
+<p>2.写出高质量的代码</p>
+
+<p>曾经感觉写的还可以的代码，敲出来就会被鄙视一顿，Pair总会告诉你有更好的方式来解决这个问题，哪些变量应该抽出去，哪部分应该写成接口，一步步的去除掉代码中的bad smell，逼着自己写出更好的代码。并且，会常常进行代码的重构，作为一个Pair的Observer会从更高的层面来对代码进行整理，好代码都是这么出来的。</p>
+
+<p>3.知识的共享</p>
+
+<p>Pair-Programming最大的好处，于是这一个月，跟索大师学BDD，跟超女学UI，跟超男学Chef，跟郑大学写高质量的代码，跟杨栋学习快速解决问题的方法，跟文博学习软件架构和重构。</p>
+
+<p>从Pair身上可以学到太多自己不懂的知识和技术，更快速的扩展自己的知识边界。</p>
+
+<p>4.对项目的理解和熟悉</p>
+
+<p>在别的公司，新人进来往往有至少2个月的培训期，真正开始贡献代码往往都在3个月以后了。而通过和Pair一起写代码，能够非常快速的完成对项目代码的理解和熟悉，能够以最快的速度投入到开发中去。</p>
+
+<p>5.程序员的素养</p>
+
+<p>在Pair-Programming的过程中，一个人的知识技术水平、反映能力、解决问题的能力会非常清晰的暴露出来，变得公开和透明。 而像所说的程序员有四怕：1) 怕自己看上去傻 2) 怕被认为是没用的 3) 怕自己变的不重要（过时）4) 怕自己不够好。 Pair时会让人很有压力，会逼迫着你去学习、提升自己、证明自己。感谢和我一起pair过的同事，能够容忍我那么多低级的错误和傻笨的表现，我会继续努力，成为一个专业和成熟的TW的developer。</p>
+
+<p>6.这是两个人的事</p>
+
+<p>在开发的过程中，常常会碰见很多让人头痛的技术难题，当一个人面对时，往往会有很大的压力，常常会走极端，甚至会突然间的奔溃或抓狂。Pair让这些难题变成两个人的事情，既缓解了压力，并且增强了解决问题的能力。同甘苦、共患难，在开发过程中同样存在，能够增强对项目的责任心和团队整体的协作能力。</p>
+
+<p>Thanks to pair， I learned a lot ！</p>
+
+<p>引用一个前辈的话：</p>
+
+<p>我们Pair 做任何一件事情。</p>
+
+<p>——ThoughtWorks 西安Office</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Roody</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-22T00:05:28+08:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tech/'>tech</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://iamroody.github.com/blog/2011/08/22/learned-from-pair-programming/" data-via="" data-counturl="http://iamroody.github.com/blog/2011/08/22/learned-from-pair-programming/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/08/14/a-good-union-test/" title="Previous Post: A good union test">&laquo; A good union test</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/09/14/whats-wrong-with-me/" title="Next Post: What's wrong with me?">What's wrong with me? &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/12/31/20112012/">2011~2012</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/30/hash-code/">HashCode</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/10/devops/">DEVOPS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/08/the-next-30-days/">The next 30 days</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/06/what-i-want-to-be-in-next-5-years/">What I want to be in next 5 years ?</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Roody -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

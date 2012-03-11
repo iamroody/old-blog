@@ -1,11 +1,77 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://iamroody.github.com/blog/2011/08/14/my-10-bad-habits-in-the-first-month/</loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/2011/08/14/story-development/</loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/2011/08/14/a-good-union-test/</loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/2011/08/22/learned-from-pair-programming/</loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/2011/09/14/whats-wrong-with-me/</loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/2011/11/01/sequence-of-find-a-command-in-shell/</loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/2011/11/01/an-interesting-command-in-macos/</loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/2011/11/02/be-careful-auto-import-in-your-ide/</loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://iamroody.github.com/blog/2011/11/03/structure-of-function-test-in-our-project/
+        </loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/2011/11/04/in-memory-database/</loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/2011/11/05/pechakucha/</loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/2011/11/06/what-i-want-to-be-in-next-5-years/</loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/2011/11/08/the-next-30-days/</loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/2011/11/10/devops/</loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/2011/12/30/hash-code/</loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/2011/12/31/20112012/</loc>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://iamroody.github.com/blog/archives/</loc>
-        <lastmod>2012-03-10T09:45:39+08:00</lastmod>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
     </url>
     <url>
         <loc>http://iamroody.github.com/</loc>
-        <lastmod>2012-03-10T09:45:39+08:00</lastmod>
+        <lastmod>2012-03-11T15:39:15+08:00</lastmod>
     </url>
 </urlset>
