@@ -4,20 +4,20 @@
   <title><![CDATA[Category: tech | I am Roody]]></title>
   <link href="http://iamroody.github.com/blog/categories/tech/atom.xml" rel="self"/>
   <link href="http://iamroody.github.com/"/>
-  <updated>2012-03-11T15:41:44+08:00</updated>
+  <updated>2012-03-11T16:02:47+08:00</updated>
   <id>http://iamroody.github.com/</id>
   <author>
     <name><![CDATA[Roody]]></name>
-    
+    <email><![CDATA[wangyan@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[DEVOPS]]></title>
-    <link href="http://iamroody.github.com/blog/2011/11/10/devops/"/>
+    <link href="http://iamroody.github.com/blog/devops/"/>
     <updated>2011-11-10T00:03:23+08:00</updated>
-    <id>http://iamroody.github.com/blog/2011/11/10/devops</id>
+    <id>http://iamroody.github.com/blog/devops</id>
     <content type="html"><![CDATA[<p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-09-at-11.41.35-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-09-at-11.41.35-PM-300x193.png" alt="" /></a></p>
 
 <p>Today, Cosmin gave us a session about devops, but the session didn't tell too much about what's the devops, it focused on another aspect about project. When the project's development is finished, who will care about the rest works, including how to deploy , maintain, upgrade, monitor and so on.  The session talked a lot about what the operation team need and do.</p>
@@ -30,9 +30,9 @@
   
   <entry>
     <title type="html"><![CDATA[The next 30 days]]></title>
-    <link href="http://iamroody.github.com/blog/2011/11/08/the-next-30-days/"/>
+    <link href="http://iamroody.github.com/blog/the-next-30-days/"/>
     <updated>2011-11-08T23:21:22+08:00</updated>
-    <id>http://iamroody.github.com/blog/2011/11/08/the-next-30-days</id>
+    <id>http://iamroody.github.com/blog/the-next-30-days</id>
     <content type="html"><![CDATA[<p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-08-at-11.23.19-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-08-at-11.23.19-PM.png" alt="" /></a></p>
 
 <p>Michael shared a TED video named <a href="http://v.youku.com/v_show/id_XMjgxNDA4OTIw.html">"the next 30 days"</a>, it talks about make some personal plan in next 30 days.</p>
@@ -49,9 +49,9 @@
   
   <entry>
     <title type="html"><![CDATA[What I want to be in next 5 years ?]]></title>
-    <link href="http://iamroody.github.com/blog/2011/11/06/what-i-want-to-be-in-next-5-years/"/>
+    <link href="http://iamroody.github.com/blog/what-i-want-to-be-in-next-5-years/"/>
     <updated>2011-11-06T23:54:46+08:00</updated>
-    <id>http://iamroody.github.com/blog/2011/11/06/what-i-want-to-be-in-next-5-years</id>
+    <id>http://iamroody.github.com/blog/what-i-want-to-be-in-next-5-years</id>
     <content type="html"><![CDATA[<p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-06-at-11.52.51-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-06-at-11.52.51-PM.png" alt="" /></a>
 Since the first day i entered into company, i always ask myself this question, The process of thinking makes me be aware of what and why i am doing this currently.</p>
 
@@ -81,9 +81,9 @@ Since the first day i entered into company, i always ask myself this question, T
   
   <entry>
     <title type="html"><![CDATA[PechaKucha]]></title>
-    <link href="http://iamroody.github.com/blog/2011/11/05/pechakucha/"/>
+    <link href="http://iamroody.github.com/blog/pechakucha/"/>
     <updated>2011-11-05T23:54:42+08:00</updated>
-    <id>http://iamroody.github.com/blog/2011/11/05/pechakucha</id>
+    <id>http://iamroody.github.com/blog/pechakucha</id>
     <content type="html"><![CDATA[<p>[gallery]
 In thoughtworks university , every wednesday is PechaKucha night. At that night, presenter will give a presentation based on 20 slides, forward automatically in every 20 seconds. The topic can be anything that you know well or interested, such as drink, mind, movie star, food , tea, sports and so on.</p>
 
@@ -103,9 +103,9 @@ In thoughtworks university , every wednesday is PechaKucha night. At that night,
   
   <entry>
     <title type="html"><![CDATA[In-memory database]]></title>
-    <link href="http://iamroody.github.com/blog/2011/11/04/in-memory-database/"/>
+    <link href="http://iamroody.github.com/blog/in-memory-database/"/>
     <updated>2011-11-04T23:59:34+08:00</updated>
-    <id>http://iamroody.github.com/blog/2011/11/04/in-memory-database</id>
+    <id>http://iamroody.github.com/blog/in-memory-database</id>
     <content type="html"><![CDATA[<p><strong>Definition</strong>
 An in-memory database is a database that runs entirely in main memory, without touching a disk. Often they run as an embedded database: created when a process starts, running embedded within that process, and is destroyed when the process finishes.
 (From Martin Fowler , <a href="http://martinfowler.com/bliki/InMemoryTestDatabase.html">InMemoryTestDatabase</a>)</p>

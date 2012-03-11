@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Life - I am Roody</title>
+  <title>Be careful auto import in your IDE - I am Roody</title>
   <meta name="author" content="Roody">
 
   
-  <meta name="description" content="Category: Life">
+  <meta name="description" content="In our project , we have two kinds of database, postgresql and couchdb.
+For postgresql, when we want to add a new model related table in django, we &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://iamroody.github.comblog/categories/life">
+  <link rel="canonical" href="http://iamroody.github.com/blog/be-careful-auto-import-in-your-ide">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,35 +64,118 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Life</h1>
+    
+      <h1 class="entry-title">Be Careful Auto Import in Your IDE</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-02T19:35:52+08:00" pubdate data-updated="true">Nov 2<span>nd</span>, 2011</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>In our project , we have two kinds of database, postgresql and couchdb.
+For postgresql, when we want to add a new model related table in django, we should extend models.Model class and add some filed like this:</p>
 
-  
-  <h2>2011</h2>
+<pre><code>class ProgresTableModel(models.Model):
+ message = CharField(max_length=160)
+ organization = ForeignKey(Organization)
+ status = BooleanField(default=False)
+ ......
+</code></pre>
 
-<article>
-  
-<h1><a href="/blog/20112012/">2011~2012</a></h1>
-<time datetime="2011-12-31T23:32:54+08:00" pubdate><span class='month'>Dec</span> <span class='day'>31</span> <span class='year'>2011</span></time>
+<p>Here, we use BooleanField from django.db.models.fields, import like this:</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/life/'>Life</a></span>
-</footer>
+<pre><code>from django.db.models.fields import BooleanField
+</code></pre>
 
+<p>For couchdb, we should extend Document class , and like this :</p>
 
-</article>
+<pre><code>class CouchdbModel(Document):
+ document_type = TextField()
+ status = BooleanField()
+ ......
+</code></pre>
 
+<p>Here, we use BooleanField from couchdb.mapping import like this:</p>
+
+<pre><code>from couchdb.mapping import  BooleanField
+</code></pre>
+
+<p>It looks well, unfortunately we used both in 1 python file, and the pycharm auto imported the first one, when we create database it doesn&#8217;t throw out any exception , BooleanField object in different package is totally different.</p>
+
+<p>So, be careful auto import function in your IDE !</p>
+
+<p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-02-at-7.50.56-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-02-at-7.50.56-PM.png" alt="happy or sad ?" /></a></p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Roody</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-02T19:35:52+08:00" pubdate data-updated="true">Nov 2<span>nd</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tech/'>tech</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://iamroody.github.com/blog/be-careful-auto-import-in-your-ide/" data-via="" data-counturl="http://iamroody.github.com/blog/be-careful-auto-import-in-your-ide/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/an-interesting-command-in-macos/" title="Previous Post: An interesting command in MacOS">&laquo; An interesting command in MacOS</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/structure-of-function-test-in-our-project/" title="Next Post: Structure of Function Test In Our Project">Structure of Function Test In Our Project &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>

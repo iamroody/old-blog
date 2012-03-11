@@ -4,20 +4,20 @@
   <title><![CDATA[Category: JAVA | I am Roody]]></title>
   <link href="http://iamroody.github.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://iamroody.github.com/"/>
-  <updated>2012-03-11T15:41:44+08:00</updated>
+  <updated>2012-03-11T16:02:47+08:00</updated>
   <id>http://iamroody.github.com/</id>
   <author>
     <name><![CDATA[Roody]]></name>
-    
+    <email><![CDATA[wangyan@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[HashCode]]></title>
-    <link href="http://iamroody.github.com/blog/2011/12/30/hash-code/"/>
+    <link href="http://iamroody.github.com/blog/hash-code/"/>
     <updated>2011-12-30T22:37:01+08:00</updated>
-    <id>http://iamroody.github.com/blog/2011/12/30/hash-code</id>
+    <id>http://iamroody.github.com/blog/hash-code</id>
     <content type="html"><![CDATA[<p>Java中的每一个对象都拥有hashCode()方法来生成该对象的hash code，那么这个hash code是做什么用的呢？</p>
 
 <p>首先要说起<a href="http://en.wikipedia.org/wiki/Hash_table">hash table</a>，<a href="http://math.hws.edu/javanotes/c10/s3.html">结构</a>如下：</p>
