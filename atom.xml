@@ -4,7 +4,7 @@
   <title><![CDATA[I am Roody]]></title>
   <link href="http://iamroody.github.com/atom.xml" rel="self"/>
   <link href="http://iamroody.github.com/"/>
-  <updated>2012-03-10T10:18:03+08:00</updated>
+  <updated>2012-03-11T11:09:35+08:00</updated>
   <id>http://iamroody.github.com/</id>
   <author>
     <name><![CDATA[Roody]]></name>
@@ -12,23 +12,5 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[这是一个疯狂的世界]]></title>
-    <link href="http://iamroody.github.com/blog/2012/03/10/zhe-shi-%5B%3F%5D-ge-feng-kuang-de-shi-jie/"/>
-    <updated>2012-03-10T10:03:00+08:00</updated>
-    <id>http://iamroody.github.com/blog/2012/03/10/zhe-shi-[?]-ge-feng-kuang-de-shi-jie</id>
-    <content type="html"><![CDATA[<p>ssss</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[你好]]></title>
-    <link href="http://iamroody.github.com/blog/2012/03/10/ni-hao/"/>
-    <updated>2012-03-10T10:02:00+08:00</updated>
-    <id>http://iamroody.github.com/blog/2012/03/10/ni-hao</id>
-    <content type="html"><![CDATA[<p>I just want to use this frame work</p>
-]]></content>
-  </entry>
   
 </feed>
