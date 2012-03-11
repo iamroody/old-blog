@@ -4,7 +4,7 @@
   <title><![CDATA[I am Roody]]></title>
   <link href="http://iamroody.github.com/atom.xml" rel="self"/>
   <link href="http://iamroody.github.com/"/>
-  <updated>2012-03-11T16:02:47+08:00</updated>
+  <updated>2012-03-11T16:06:43+08:00</updated>
   <id>http://iamroody.github.com/</id>
   <author>
     <name><![CDATA[Roody]]></name>
@@ -182,30 +182,43 @@ In thoughtworks university , every wednesday is PechaKucha night. At that night,
     <link href="http://iamroody.github.com/blog/in-memory-database/"/>
     <updated>2011-11-04T23:59:34+08:00</updated>
     <id>http://iamroody.github.com/blog/in-memory-database</id>
-    <content type="html"><![CDATA[<p><strong>Definition</strong>
-An in-memory database is a database that runs entirely in main memory, without touching a disk. Often they run as an embedded database: created when a process starts, running embedded within that process, and is destroyed when the process finishes.
-(From Martin Fowler , <a href="http://martinfowler.com/bliki/InMemoryTestDatabase.html">InMemoryTestDatabase</a>)</p>
+    <content type="html"><![CDATA[<p><strong>Definition</strong></p>
 
-<p><strong>Contrast</strong>
-Much faster than disk-optimized database, because simpler algorithms,fewer CPU instructions, fewer I/O reading activity.
+<p>An in-memory database is a database that runs entirely in main memory, without touching a disk. Often they run as an embedded database: created when a process starts, running embedded within that process, and is destroyed when the process finishes.</p>
+
+<p>(From Martin Fowler , <a href="http://martinfowler.com/bliki/InMemoryTestDatabase.html">InMemoryTestDatabase</a>)</p>
+
+<p><strong>Contrast</strong></p>
+
+<p>Much faster than disk-optimized database, because simpler algorithms,fewer CPU instructions, fewer I/O reading activity.
 Lack support for durability portion of ACID, because it will lose all information when lose power or reset. But they can add durability via using some mechanisms, such as snapshot files,transaction logging,Non-volatile random, access memory, high availability.</p>
 
-<p><strong>When to use it ?</strong>
-Using in-memory database in a enterprise application can dramatically reduce build time
+<p><strong>When to use it ?</strong></p>
+
+<p>Using in-memory database in a enterprise application can dramatically reduce build time
 Not touching real database in unit test. it is safe for real database, keep database independent and clean. Don&#8217;t worry about the sequence of test caused different db result .</p>
 
-<p><strong>Which database ?</strong>
-<a href="http://www.sqlite.org/">Sqlite</a>
-<a href="http://hsqldb.org/">HSQLDB</a>
-<a href="http://www.mysql.com/products/cluster/">MySQL Cluster</a>
-<a href="http://www.mcobject.com/extremedbfamily.shtml">eXtremeDB</a>
-<a href="http://www.oracle.com/technetwork/database/timesten/overview/index.html">Oracle TimesTen In-Memory Databas</a>
-<a href="http://www.sybase.com/manage/in-memory-databases">Sybase in-memory databases</a>
-<a href="http://www-01.ibm.com/software/data/soliddb/">solidDB</a></p>
+<p><strong>Which database ?</strong></p>
 
-<p><strong>Reference</strong>
-<a href="http://martinfowler.com/bliki/InMemoryTestDatabase.html">InMemoryTestDatabase</a>
-<a href="http://en.wikipedia.org/wiki/In-memory_database">In-memory database</a></p>
+<p><a href="http://www.sqlite.org/">Sqlite</a></p>
+
+<p><a href="http://hsqldb.org/">HSQLDB</a></p>
+
+<p><a href="http://www.mysql.com/products/cluster/">MySQL Cluster</a></p>
+
+<p><a href="http://www.mcobject.com/extremedbfamily.shtml">eXtremeDB</a></p>
+
+<p><a href="http://www.oracle.com/technetwork/database/timesten/overview/index.html">Oracle TimesTen In-Memory Databas</a></p>
+
+<p><a href="http://www.sybase.com/manage/in-memory-databases">Sybase in-memory databases</a></p>
+
+<p><a href="http://www-01.ibm.com/software/data/soliddb/">solidDB</a></p>
+
+<p><strong>Reference</strong></p>
+
+<p><a href="http://martinfowler.com/bliki/InMemoryTestDatabase.html">InMemoryTestDatabase</a></p>
+
+<p><a href="http://en.wikipedia.org/wiki/In-memory_database">In-memory database</a></p>
 ]]></content>
   </entry>
   
