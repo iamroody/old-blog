@@ -4,7 +4,7 @@
   <title><![CDATA[I am Roody]]></title>
   <link href="http://iamroody.github.com/atom.xml" rel="self"/>
   <link href="http://iamroody.github.com/"/>
-  <updated>2012-07-13T01:11:50+08:00</updated>
+  <updated>2012-07-13T01:30:38+08:00</updated>
   <id>http://iamroody.github.com/</id>
   <author>
     <name><![CDATA[Roody]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[lazy boy]]></title>
+    <link href="http://iamroody.github.com/blog/lazy-boy/"/>
+    <updated>2012-07-13T01:16:00+08:00</updated>
+    <id>http://iamroody.github.com/blog/lazy-boy</id>
+    <content type="html"><![CDATA[<p>一直没有写blog的原因是把blog从wordpress迁移到octopress之后，写blog没有以前那么方便。</p>
+
+<p>理由嘛，可以找很多：只能在vim上敲着字，没有了那么多文本编辑的功能，样式是什么样的都不清楚，外加上传文件和图片也不那么的傻瓜化，让写点东西有了一定的门槛，当然，这还是在确实有可以分享的知识储备基础之上。</p>
+
+<p>好吧，我承认，这是一个赤裸裸的借口。</p>
+
+<blockquote><p>相对于wordpress，vim+git+octopress更顺手一点；<br>
+相对于国外的烂主机，github的稳定性和可访问性更胜一筹；<br>
+相对于evernote上所堆积的一堆堆的总结，blog更有条理性 <br>
+… …</p></blockquote>
+
+<p>总之，是我懒了，以后得勤快点。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2011~2012]]></title>

@@ -7,7 +7,8 @@
 	<meta name="author" content="Roody">
 
 	
-	<meta name="description" content="Do you know how the system understand which program to run when you type a command ? Maybe you will say that system will look up the $PATH or check &hellip;">
+	<meta name="description" content="Today i just knew a funny command in mac os, it is command say.** This command can convert the input text to audible speech, for example : 1
+$ say &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -68,6 +69,118 @@
 </header>
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/an-interesting-command-in-macos/">An Interesting Command in MacOS</a></h1>
+	<div class="entry-content">
+		<p>Today i just knew a funny command in mac os, it is command say.**</p>
+
+<p>This command can convert the input text to audible speech, for example :</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>say hello world
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>you can hear a male voice to read it .Also you can let it read a file using &#8220;-f file_name&#8221;, also you can record the voice to the file using &#8220;-o output.aiff &#8221; .</p>
+
+<p>The most interesting is that using &#8220;-v voice&#8221; to use different voice, for example:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>say -v good hello world <span class="c"># high pitch</span>
+</span><span class='line'><span class="nv">$ </span>say -v bad hello world <span class="c">#low pitch</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here is a list of the other voices you can also use:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#Female Voices</span>
+</span><span class='line'><span class="nv">$ </span>say -v Agnes <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Kathy <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Princess <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Vicki <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Victoria <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="c">#Male Voices</span>
+</span><span class='line'><span class="nv">$ </span>say -v Bruce <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Fred <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Junior <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Ralph <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="c">#Novelty Voices</span>
+</span><span class='line'><span class="nv">$ </span>say -v Albert <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v <span class="s2">&quot;Bad News&quot;</span> <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Bahh <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Bells <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Boing <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Bubbles <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Cellos <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Deranged <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v <span class="s2">&quot;Good News&quot;</span> <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Hysterical <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v <span class="s2">&quot;Pipe Organ&quot;</span> <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Trinoids <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Whisper <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Zarvox <span class="s2">&quot;hello world&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-01T23:40:55+08:00" pubdate data-updated="true">Nov 1<span>st</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/tech/'>tech</a>
+
+
+</div>
+	
+</div></article>
 
 
     <article class="post">
