@@ -7,7 +7,7 @@
 	<meta name="author" content="Roody">
 
 	
-	<meta name="description" content="&#8220;What&#8217;s wrong with me ?&#8221; 最近这些日子，我一直在问我这样的问题，因为诸多不顺。常常说人品差，看来，真的是轮到我了。我甚至开始质疑我的学习能力和解决问题的能力。 仔细想想从第一次独立的做story开始就一直缠着我 &hellip;">
+	<meta name="description" content="What&#8217;s wrong with me ? 最近这些日子，我一直在问我这样的问题，因为诸多不顺。常常说人品差，看来，真的是轮到我了。我甚至开始质疑我的学习能力和解决问题的能力。 仔细想想从第一次独立的做story开始就一直缠着我: 记得很清楚那是关于广告的story， &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -69,11 +69,11 @@
 	
 	<div id="content" class="inner"><article class="post">
 	<h1 class="title">What's Wrong With Me?</h1>
-	<div class="entry-content"><p>&#8220;What&#8217;s wrong with me ?&#8221;</p>
+	<div class="entry-content"><blockquote><p>What&#8217;s wrong with me ?</p></blockquote>
 
-<p>最近这些日子，我一直在问我这样的问题，因为诸多不顺。常常说人品差，看来，真的是轮到我了。我甚至开始质疑我的学习能力和解决问题的能力。</p>
+<p>最近这些日子，我一直在问我这样的问题，因为诸多不顺。常常说人品差，看来，真的是轮到我了。我甚至开始质疑我的学习能力和解决问题的能力。<br></p>
 
-<p>仔细想想从第一次独立的做story开始就一直缠着我</p>
+<p>仔细想想从第一次独立的做story开始就一直缠着我:<br></p>
 
 <p>记得很清楚那是关于广告的story，要求在cucumber test里面选中页面上所有的category 和 tag，然后来看一下广告的url中是否包含了所有的category和tag。看起来没有什么问题，可真正开始测试的时候，悲剧了。先要到达该space页面，一次点开所有的“show more”连接（因为有些tag是被隐藏到show more里面的），然后选中所有的category和tag。第一个问题出现了，有一个tag死活选不上，原因是在一个space页面，不同的category里面，存在着名字相同的tag，而我们处理是只会选中最先出现的那个，废了半天劲搞不定，去和客户沟通，客户也认为在不同的category里面不应该出现重复的tag，OK，干掉重复的，更新我们的taxonomy.第二个问题出现了，如何来验证广告的url里面包含了所有的tag和category呢？由于rul里面的category的顺序和页面取的不一样，并且tag的顺序也不同，有canonical顺序还有其他的排序规则，无法来比对是否一直，此时选用了一个非常费时的方法，将其打散成hashset，然后比对两个是否一直，这样就忽略了顺序所带来的干扰。最终，我花了好几天的时间在这个cucumber test的验证上，而真正的实现java代码只用了一个多小时的时间，:(</p>
 

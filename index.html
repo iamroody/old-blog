@@ -7,7 +7,12 @@
 	<meta name="author" content="Roody">
 
 	
-	<meta name="description" content="本命年、毕业、旅行、上班、TWU&#8230; 闹心、离别、兴奋、迷茫、开心&#8230; 2011年过去了，我很怀念它. 展望着不是世界末日的2012，有很多的远景 希望自己在工作能力上能有进一步的提高 希望能在某些领域有所专长 希望改掉那些工作过渡期的缺点 希望能有一次长途旅行 &hellip;">
+	<meta name="description" content="2011年 本命年、毕业、旅行、上班、TWU…
+闹心、离别、兴奋、迷茫、开心&#8230; 2011年过去了，我很怀念它. 2012年 展望着不是世界末日的2012，有很多的愿景
+希望自己在工作能力上能有进一步的提高
+希望能在某些领域有所专长
+希望改掉那些工作过渡期的缺点
+希望能有一次长途旅行 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -75,25 +80,22 @@
 	<div class="entry-content">
 		<p><a href="http://wangyan.info/wp-content/uploads/2011/12/Screen-Shot-2011-12-31-at-11.24.32-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/12/Screen-Shot-2011-12-31-at-11.24.32-PM-300x179.png" alt="2012" /></a></p>
 
-<p>本命年、毕业、旅行、上班、TWU&#8230;</p>
+<h2>2011年</h2>
 
-<p>闹心、离别、兴奋、迷茫、开心&#8230;</p>
+<p>本命年、毕业、旅行、上班、TWU…<br>
+闹心、离别、兴奋、迷茫、开心&#8230; <br>
+2011年过去了，我很怀念它.</p>
 
-<p>2011年过去了，我很怀念它.</p>
+<h2>2012年</h2>
 
-<p>展望着不是世界末日的2012，有很多的远景</p>
+<p>展望着不是世界末日的2012，有很多的愿景<br>
+希望自己在工作能力上能有进一步的提高<br>
+希望能在某些领域有所专长<br>
+希望改掉那些工作过渡期的缺点<br>
+希望能有一次长途旅行<br>
+希望能好好培养自己的摄影和绘画的爱好<br></p>
 
-<p>希望自己在工作能力上能有进一步的提高</p>
-
-<p>希望能在某些领域有所专长</p>
-
-<p>希望改掉那些工作过渡期的缺点</p>
-
-<p>希望能有一次长途旅行</p>
-
-<p>希望能好好培养自己的摄影和绘画的爱好</p>
-
-<p>Hello 2012, I&#8217;m ready !</p>
+<blockquote><p>Hello 2012, I&#8217;m ready !</p></blockquote>
 
 		
 		
@@ -128,7 +130,11 @@
     <article class="post">
 	<h1 class="title"><a href="/blog/hash-code/">HashCode</a></h1>
 	<div class="entry-content">
-		<p>Java中的每一个对象都拥有hashCode()方法来生成该对象的hash code，那么这个hash code是做什么用的呢？</p>
+		<h3>问题</h3>
+
+<p>Java中的每一个对象都拥有hashCode()方法来生成该对象的hash code，那么这个hash code是做什么用的呢？</p>
+
+<h3>Hash Table</h3>
 
 <p>首先要说起<a href="http://en.wikipedia.org/wiki/Hash_table">hash table</a>，<a href="http://math.hws.edu/javanotes/c10/s3.html">结构</a>如下：</p>
 
@@ -136,37 +142,68 @@
 
 <p>hash code 就是对象在数组中的索引的位置，当然也有情况是几个对象的hash code 值一样（如2 ,5 ），这种情况叫做 collision，我们用链表来存储。</p>
 
-<p>我们再返回到这个问题上，例如, 你新建了一个hash map来存放一个叫做Rect类以及对Rect的描述：
-<code>Map map = HashMap();
-map.put(new Rect(4,5), "rect");
-</code>
-同时又通过get方法来获取描述，如:
-<code>String description = map.get(new Rect(4,5))</code></p>
+<h3>场景</h3>
+
+<p>我们再返回到这个问题上，例如, 你新建了一个hash map来存放一个叫做Rect类以及对Rect的描述：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Map</span> <span class="n">map</span> <span class="o">=</span> <span class="n">HashMap</span><span class="o">();</span>
+</span><span class='line'><span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Rect</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span><span class="mi">5</span><span class="o">),</span> <span class="s">&quot;rect&quot;</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>同时又通过get方法来获取描述，如:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">description</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="k">new</span> <span class="n">Rect</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span><span class="mi">5</span><span class="o">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>在这种情况下，我们所获取得到的是null值。你也许会想，“哦，因为是new出来的对象，所以两个肯定不等，需要override object.equals() 方法”。然而，override之后，依然取到的是null值。</p>
 
-<p>因为在JAVA中，hash table的put和get方法中，都有这样的一段判断代码来决定是否在一个位置上存储和读取对象：
-<code>if ((e.hash == hash) &amp;&amp; e.key.equals(key))</code>
-既检查hash code值是否相等，还调用对象的equals方法，因此我们在覆盖equals方法时，同时一定要覆盖hashCode方法来保证相同的object有相同的hash code，如果不这样做的话，当这个class和hash set、hash map、hash table一起工作时将会出错。</p>
+<p>因为在JAVA中，hash table的put和get方法中，都有这样的一段判断代码来决定是否在一个位置上存储和读取对象：</p>
 
-<p>因此，关于hashcode()有个通用的约定：
-A. Whenever it is invoked on the same object more than once during an execution of a Java application, the hashCode method must consistently return the same integer, provided no information used in equals comparisons on the object is modified. This integer need not remain consistent from one execution of an application to another execution of the same application.</p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">if</span> <span class="o">((</span><span class="n">e</span><span class="o">.</span><span class="na">hash</span> <span class="o">==</span> <span class="n">hash</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">e</span><span class="o">.</span><span class="na">key</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">key</span><span class="o">))</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>B. If two objects are equal according to the equals(Object) method, then calling the hashCode method on each of the two objects must produce the same integer result.</p>
 
-<p>C. It is <em>not</em> required that if two objects are unequal according to the <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#equals(java.lang.Object">equals(java.lang.Object)</a>) method, then calling the hashCode method on each of the two objects must produce distinct integer results. However, the programmer should be aware that producing distinct integer results for unequal objects may improve the performance of hashtables.</p>
+<p>既检查hash code值是否相等，还调用对象的equals方法，因此我们在覆盖equals方法时，同时一定要覆盖hashCode方法来保证相同的object有相同的hash code，如果不这样做的话，当这个class和hash set、hash map、hash table一起工作时将会出错。</p>
 
-<p>当然了，如果相同的实例能拥有唯一的hash code值，对hash table的性能提升有很大的帮助，固然很好，但是往往是蛮困难的。 那么如何写一个有效的hashCode方法呢？
-在effective java中叙述的非常详细，在这里举个例子:
-<code>@Override
-public int hashCode()
-{
-int result = 17;
-result = 31 * result + length;
-result = 31 * result + width;
-return result;
-}
-</code>如果class的content是String或其他实例的话，可以考虑使用.hashCode()来计算result值。</p>
+<h3>约定</h3>
+
+<p>关于hashcode()有个通用的约定：<br>
+1.  Whenever it is invoked on the same object more than once during an execution of a Java application, the hashCode method must consistently return the same integer, provided no information used in equals comparisons on the object is modified. This integer need not remain consistent from one execution of an application to another execution of the same application.<br>
+2.  If two objects are equal according to the equals(Object) method, then calling the hashCode method on each of the two objects must produce the same integer result.<br>
+3.  It is <em>not</em> required that if two objects are unequal according to the <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#equals(java.lang.Object">equals(java.lang.Object)</a>) method, then calling the hashCode method on each of the two objects must produce distinct integer results. However, the programmer should be aware that producing distinct integer results for unequal objects may improve the performance of hashtables.<br>
+当然了，如果相同的实例能拥有唯一的hash code值，对hash table的性能提升有很大的帮助，固然很好，但是往往是蛮困难的。</p>
+
+<h3>有效的hashCode Method</h3>
+
+<p>那么如何写一个有效的hashCode方法呢？<br>
+在effective java中叙述的非常详细，在这里举个例子:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span>
+</span><span class='line'><span class="o">{</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">17</span><span class="o">;</span>
+</span><span class='line'><span class="n">result</span> <span class="o">=</span> <span class="mi">31</span> <span class="o">*</span> <span class="n">result</span> <span class="o">+</span> <span class="n">length</span><span class="o">;</span>
+</span><span class='line'><span class="n">result</span> <span class="o">=</span> <span class="mi">31</span> <span class="o">*</span> <span class="n">result</span> <span class="o">+</span> <span class="n">width</span><span class="o">;</span>
+</span><span class='line'><span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果class的content是String或其他实例的话，可以考虑使用.hashCode()来计算result值。</p>
 
 		
 		
@@ -287,17 +324,24 @@ return result;
     <article class="post">
 	<h1 class="title"><a href="/blog/what-i-want-to-be-in-next-5-years/">What I Want to Be in Next 5 Years ?</a></h1>
 	<div class="entry-content">
-		<p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-06-at-11.52.51-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-06-at-11.52.51-PM.png" alt="" /></a>
-Since the first day i entered into company, i always ask myself this question, The process of thinking makes me be aware of what and why i am doing this currently.</p>
+		<p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-06-at-11.52.51-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-06-at-11.52.51-PM.png" alt="" /></a></p>
+
+<h3>Ask Yourself</h3>
+
+<p>Since the first day i entered into company, I always ask myself this question, The process of thinking makes me be aware of what and why i am doing this currently.</p>
 
 <p>For me, different stages have different answers even though i just worked here for 4 months. In the first 2 months, i just thought about how to survive in TW, and avoid being fired in 6 months&#8217; probation period. I want to write clean code ,learn more new things about software development, pursue high quality software, but I don&#8217;t have clear career plan. During TWU, i began to know what i should do and how i prepare for that.</p>
 
+<h3>Core Offerings</h3>
+
 <p>From a thoughtworker&#8217;s blog, i know that one person&#8217;s future depends on fit that you between your company&#8217;s core values. Person&#8217;s development is related to your company&#8217;s development. What&#8217;s your company&#8217;s core offering ? What can you offer values in those offerings?</p>
 
-<p>The following picture is thoughtworks&#8217; core offering:
+<p>The following picture is thoughtworks&#8217; core offering:<br>
 <a href="http://wangyan.info/wp-content/uploads/2011/11/core-offering.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/core-offering.png" alt="" /></a></p>
 
 <p>thoughtworks&#8217; core values are software excellence, Methodology around it is continuous design and delivery . the left side is consulting, including experience design, continuous improvement and technical skills. The right side is ALM , including Go, Mingle and Twist.</p>
+
+<h3>Plan</h3>
 
 <p>According to core offerings, i make a simple plan for myself:</p>
 
@@ -307,9 +351,9 @@ Since the first day i entered into company, i always ask myself this question, T
 
 <p>In the fifth year, i hope i can still work in thoughtworks. At that time , i hope i can be good at consulting work , give clients awesome technical advice, be a tech leader in a project.</p>
 
-<p>I hope everyday i can be better than yesterday !</p>
+<h4>I hope everyday i can be better than yesterday !</h4>
 
-<p>Reference:
+<p>Reference:<br>
 我的未来在哪里？ http://www.tuzei8.com/page/3/</p>
 
 		
@@ -532,30 +576,43 @@ All function tests are here, each page test is a single directory, also, end to 
 		<p>In our project , we have two kinds of database, postgresql and couchdb.
 For postgresql, when we want to add a new model related table in django, we should extend models.Model class and add some filed like this:</p>
 
-<pre><code>class ProgresTableModel(models.Model):
- message = CharField(max_length=160)
- organization = ForeignKey(Organization)
- status = BooleanField(default=False)
- ......
-</code></pre>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">ProgresTableModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span><span class='line'>     <span class="n">message</span> <span class="o">=</span> <span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">160</span><span class="p">)</span>
+</span><span class='line'>     <span class="n">organization</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Organization</span><span class="p">)</span>
+</span><span class='line'>     <span class="n">status</span> <span class="o">=</span> <span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Here, we use BooleanField from django.db.models.fields, import like this:</p>
 
-<pre><code>from django.db.models.fields import BooleanField
-</code></pre>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">django.db.models.fields</span> <span class="kn">import</span> <span class="n">BooleanField</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>For couchdb, we should extend Document class , and like this :</p>
 
-<pre><code>class CouchdbModel(Document):
- document_type = TextField()
- status = BooleanField()
- ......
-</code></pre>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">CouchdbModel</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+</span><span class='line'>     <span class="n">document_type</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">()</span>
+</span><span class='line'>     <span class="n">status</span> <span class="o">=</span> <span class="n">BooleanField</span><span class="p">()</span>
+</span><span class='line'>     <span class="o">......</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Here, we use BooleanField from couchdb.mapping import like this:</p>
 
-<pre><code>from couchdb.mapping import  BooleanField
-</code></pre>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">couchdb.mapping</span> <span class="kn">import</span>  <span class="n">BooleanField</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>It looks well, unfortunately we used both in 1 python file, and the pycharm auto imported the first one, when we create database it doesn&#8217;t throw out any exception , BooleanField object in different package is totally different.</p>
 
@@ -596,47 +653,84 @@ For postgresql, when we want to add a new model related table in django, we shou
     <article class="post">
 	<h1 class="title"><a href="/blog/an-interesting-command-in-macos/">An Interesting Command in MacOS</a></h1>
 	<div class="entry-content">
-		<p><strong>Today i just knew a funny command in mac os, it is command say.</strong></p>
+		<p>Today i just knew a funny command in mac os, it is command say.**</p>
 
-<p><strong>This command can convert the input text to audible speech, for example :</strong></p>
+<p>This command can convert the input text to audible speech, for example :</p>
 
-<p><code>say hello world</code></p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>say hello world
+</span></code></pre></td></tr></table></div></figure>
 
-<p><strong>you can hear a male voice to read it .Also you can let it read a file using &#8220;-f file_name&#8221;, also you can record the voice to the file using &#8220;-o output.aiff &#8221; .</strong></p>
 
-<p><strong>The most interesting is that using &#8220;-v voice&#8221; to use different voice, for example:</strong></p>
+<p>you can hear a male voice to read it .Also you can let it read a file using &#8220;-f file_name&#8221;, also you can record the voice to the file using &#8220;-o output.aiff &#8221; .</p>
 
-<p><strong><code>say -v good hello world</code></strong> # high pitch</p>
+<p>The most interesting is that using &#8220;-v voice&#8221; to use different voice, for example:</p>
 
-<p><code>say -v bad hello world</code> #low pitch</p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>say -v good hello world <span class="c"># high pitch</span>
+</span><span class='line'><span class="nv">$ </span>say -v bad hello world <span class="c">#low pitch</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p><strong>Here is a list of the other voices you can also use:</strong>
-<strong>Female Voices</strong>
-$ say -v Agnes &#8220;hello world&#8221;
-$ say -v Kathy &#8220;hello world&#8221;
-$ say -v Princess &#8220;hello world&#8221;
-$ say -v Vicki &#8220;hello world&#8221;
-$ say -v Victoria &#8220;hello world&#8221;
-<strong>Male Voices</strong>
-$ say -v Bruce &#8220;hello world&#8221;
-$ say -v Fred &#8220;hello world&#8221;
-$ say -v Junior &#8220;hello world&#8221;
-$ say -v Ralph &#8220;hello world&#8221;
-<strong>Novelty Voices</strong>
-$ say -v Albert &#8220;hello world&#8221;
-$ say -v &#8220;Bad News&#8221; &#8220;hello world&#8221;
-$ say -v Bahh &#8220;hello world&#8221;
-$ say -v Bells &#8220;hello world&#8221;
-$ say -v Boing &#8220;hello world&#8221;
-$ say -v Bubbles &#8220;hello world&#8221;
-$ say -v Cellos &#8220;hello world&#8221;
-$ say -v Deranged &#8220;hello world&#8221;
-$ say -v &#8220;Good News&#8221; &#8220;hello world&#8221;
-$ say -v Hysterical &#8220;hello world&#8221;
-$ say -v &#8220;Pipe Organ&#8221; &#8220;hello world&#8221;
-$ say -v Trinoids &#8220;hello world&#8221;
-$ say -v Whisper &#8220;hello world&#8221;
-$ say -v Zarvox &#8220;hello world&#8221;</p>
+
+<p>Here is a list of the other voices you can also use:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#Female Voices</span>
+</span><span class='line'><span class="nv">$ </span>say -v Agnes <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Kathy <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Princess <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Vicki <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Victoria <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="c">#Male Voices</span>
+</span><span class='line'><span class="nv">$ </span>say -v Bruce <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Fred <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Junior <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Ralph <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="c">#Novelty Voices</span>
+</span><span class='line'><span class="nv">$ </span>say -v Albert <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v <span class="s2">&quot;Bad News&quot;</span> <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Bahh <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Bells <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Boing <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Bubbles <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Cellos <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Deranged <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v <span class="s2">&quot;Good News&quot;</span> <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Hysterical <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v <span class="s2">&quot;Pipe Organ&quot;</span> <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Trinoids <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Whisper <span class="s2">&quot;hello world&quot;</span>
+</span><span class='line'><span class="nv">$ </span>say -v Zarvox <span class="s2">&quot;hello world&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 		
 		

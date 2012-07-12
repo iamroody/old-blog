@@ -73,30 +73,43 @@ For postgresql, when we want to add a new model related table in django, we &hel
 	<div class="entry-content"><p>In our project , we have two kinds of database, postgresql and couchdb.
 For postgresql, when we want to add a new model related table in django, we should extend models.Model class and add some filed like this:</p>
 
-<pre><code>class ProgresTableModel(models.Model):
- message = CharField(max_length=160)
- organization = ForeignKey(Organization)
- status = BooleanField(default=False)
- ......
-</code></pre>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">ProgresTableModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span><span class='line'>     <span class="n">message</span> <span class="o">=</span> <span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">160</span><span class="p">)</span>
+</span><span class='line'>     <span class="n">organization</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Organization</span><span class="p">)</span>
+</span><span class='line'>     <span class="n">status</span> <span class="o">=</span> <span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Here, we use BooleanField from django.db.models.fields, import like this:</p>
 
-<pre><code>from django.db.models.fields import BooleanField
-</code></pre>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">django.db.models.fields</span> <span class="kn">import</span> <span class="n">BooleanField</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>For couchdb, we should extend Document class , and like this :</p>
 
-<pre><code>class CouchdbModel(Document):
- document_type = TextField()
- status = BooleanField()
- ......
-</code></pre>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">CouchdbModel</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+</span><span class='line'>     <span class="n">document_type</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">()</span>
+</span><span class='line'>     <span class="n">status</span> <span class="o">=</span> <span class="n">BooleanField</span><span class="p">()</span>
+</span><span class='line'>     <span class="o">......</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Here, we use BooleanField from couchdb.mapping import like this:</p>
 
-<pre><code>from couchdb.mapping import  BooleanField
-</code></pre>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">couchdb.mapping</span> <span class="kn">import</span>  <span class="n">BooleanField</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>It looks well, unfortunately we used both in 1 python file, and the pycharm auto imported the first one, when we create database it doesn&#8217;t throw out any exception , BooleanField object in different package is totally different.</p>
 

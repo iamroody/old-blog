@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JAVA | I am Roody]]></title>
   <link href="http://iamroody.github.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://iamroody.github.com/"/>
-  <updated>2012-07-12T23:55:12+08:00</updated>
+  <updated>2012-07-13T01:11:50+08:00</updated>
   <id>http://iamroody.github.com/</id>
   <author>
     <name><![CDATA[Roody]]></name>
@@ -18,7 +18,11 @@
     <link href="http://iamroody.github.com/blog/hash-code/"/>
     <updated>2011-12-30T22:37:01+08:00</updated>
     <id>http://iamroody.github.com/blog/hash-code</id>
-    <content type="html"><![CDATA[<p>Java中的每一个对象都拥有hashCode()方法来生成该对象的hash code，那么这个hash code是做什么用的呢？</p>
+    <content type="html"><![CDATA[<h3>问题</h3>
+
+<p>Java中的每一个对象都拥有hashCode()方法来生成该对象的hash code，那么这个hash code是做什么用的呢？</p>
+
+<h3>Hash Table</h3>
 
 <p>首先要说起<a href="http://en.wikipedia.org/wiki/Hash_table">hash table</a>，<a href="http://math.hws.edu/javanotes/c10/s3.html">结构</a>如下：</p>
 
@@ -26,37 +30,56 @@
 
 <p>hash code 就是对象在数组中的索引的位置，当然也有情况是几个对象的hash code 值一样（如2 ,5 ），这种情况叫做 collision，我们用链表来存储。</p>
 
-<p>我们再返回到这个问题上，例如, 你新建了一个hash map来存放一个叫做Rect类以及对Rect的描述：
-<code>Map map = HashMap();
-map.put(new Rect(4,5), "rect");
-</code>
-同时又通过get方法来获取描述，如:
-<code>String description = map.get(new Rect(4,5))</code></p>
+<h3>场景</h3>
 
-<p>在这种情况下，我们所获取得到的是null值。你也许会想，“哦，因为是new出来的对象，所以两个肯定不等，需要override object.equals() 方法”。然而，override之后，依然取到的是null值。</p>
+<p>我们再返回到这个问题上，例如, 你新建了一个hash map来存放一个叫做Rect类以及对Rect的描述：
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">Map</span> <span class="n">map</span> <span class="o">=</span> <span class="n">HashMap</span><span class="o">();</span>
+</span><span class='line'><span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Rect</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span><span class="mi">5</span><span class="o">),</span> <span class="s">&quot;rect&quot;</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+同时又通过get方法来获取描述，如:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">description</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="k">new</span> <span class="n">Rect</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span><span class="mi">5</span><span class="o">))</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+在这种情况下，我们所获取得到的是null值。你也许会想，“哦，因为是new出来的对象，所以两个肯定不等，需要override object.equals() 方法”。然而，override之后，依然取到的是null值。</p>
 
 <p>因为在JAVA中，hash table的put和get方法中，都有这样的一段判断代码来决定是否在一个位置上存储和读取对象：
-<code>if ((e.hash == hash) &amp;&amp; e.key.equals(key))</code>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">if</span> <span class="o">((</span><span class="n">e</span><span class="o">.</span><span class="na">hash</span> <span class="o">==</span> <span class="n">hash</span><span class="o">)</span> <span class="o">&amp;</span><span class="n">amp</span><span class="o">;&amp;</span><span class="n">amp</span><span class="o">;</span> <span class="n">e</span><span class="o">.</span><span class="na">key</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">key</span><span class="o">))</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 既检查hash code值是否相等，还调用对象的equals方法，因此我们在覆盖equals方法时，同时一定要覆盖hashCode方法来保证相同的object有相同的hash code，如果不这样做的话，当这个class和hash set、hash map、hash table一起工作时将会出错。</p>
 
-<p>因此，关于hashcode()有个通用的约定：
-A. Whenever it is invoked on the same object more than once during an execution of a Java application, the hashCode method must consistently return the same integer, provided no information used in equals comparisons on the object is modified. This integer need not remain consistent from one execution of an application to another execution of the same application.</p>
+<h3>约定</h3>
 
-<p>B. If two objects are equal according to the equals(Object) method, then calling the hashCode method on each of the two objects must produce the same integer result.</p>
+<p>关于hashcode()有个通用的约定：<br>
+1.  Whenever it is invoked on the same object more than once during an execution of a Java application, the hashCode method must consistently return the same integer, provided no information used in equals comparisons on the object is modified. This integer need not remain consistent from one execution of an application to another execution of the same application.<br>
+2.  If two objects are equal according to the equals(Object) method, then calling the hashCode method on each of the two objects must produce the same integer result.<br>
+3.  It is <em>not</em> required that if two objects are unequal according to the <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#equals(java.lang.Object">equals(java.lang.Object)</a>) method, then calling the hashCode method on each of the two objects must produce distinct integer results. However, the programmer should be aware that producing distinct integer results for unequal objects may improve the performance of hashtables.<br>
+当然了，如果相同的实例能拥有唯一的hash code值，对hash table的性能提升有很大的帮助，固然很好，但是往往是蛮困难的。</p>
 
-<p>C. It is <em>not</em> required that if two objects are unequal according to the <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#equals(java.lang.Object">equals(java.lang.Object)</a>) method, then calling the hashCode method on each of the two objects must produce distinct integer results. However, the programmer should be aware that producing distinct integer results for unequal objects may improve the performance of hashtables.</p>
+<h3>有效的hashCode Method</h3>
 
-<p>当然了，如果相同的实例能拥有唯一的hash code值，对hash table的性能提升有很大的帮助，固然很好，但是往往是蛮困难的。 那么如何写一个有效的hashCode方法呢？
+<p>那么如何写一个有效的hashCode方法呢？<br>
 在effective java中叙述的非常详细，在这里举个例子:
-<code>@Override
-public int hashCode()
-{
-int result = 17;
-result = 31 * result + length;
-result = 31 * result + width;
-return result;
-}
-</code>如果class的content是String或其他实例的话，可以考虑使用.hashCode()来计算result值。</p>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span>
+</span><span class='line'><span class="o">{</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">17</span><span class="o">;</span>
+</span><span class='line'><span class="n">result</span> <span class="o">=</span> <span class="mi">31</span> <span class="o">*</span> <span class="n">result</span> <span class="o">+</span> <span class="n">length</span><span class="o">;</span>
+</span><span class='line'><span class="n">result</span> <span class="o">=</span> <span class="mi">31</span> <span class="o">*</span> <span class="n">result</span> <span class="o">+</span> <span class="n">width</span><span class="o">;</span>
+</span><span class='line'><span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+如果class的content是String或其他实例的话，可以考虑使用.hashCode()来计算result值。</p>
 ]]></content>
   </entry>
   

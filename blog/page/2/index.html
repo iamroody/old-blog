@@ -137,11 +137,11 @@
     <article class="post">
 	<h1 class="title"><a href="/blog/whats-wrong-with-me/">What&#8217;s Wrong With Me?</a></h1>
 	<div class="entry-content">
-		<p>&#8220;What&#8217;s wrong with me ?&#8221;</p>
+		<blockquote><p>What&#8217;s wrong with me ?</p></blockquote>
 
-<p>最近这些日子，我一直在问我这样的问题，因为诸多不顺。常常说人品差，看来，真的是轮到我了。我甚至开始质疑我的学习能力和解决问题的能力。</p>
+<p>最近这些日子，我一直在问我这样的问题，因为诸多不顺。常常说人品差，看来，真的是轮到我了。我甚至开始质疑我的学习能力和解决问题的能力。<br></p>
 
-<p>仔细想想从第一次独立的做story开始就一直缠着我</p>
+<p>仔细想想从第一次独立的做story开始就一直缠着我:<br></p>
 
 <p>记得很清楚那是关于广告的story，要求在cucumber test里面选中页面上所有的category 和 tag，然后来看一下广告的url中是否包含了所有的category和tag。看起来没有什么问题，可真正开始测试的时候，悲剧了。先要到达该space页面，一次点开所有的“show more”连接（因为有些tag是被隐藏到show more里面的），然后选中所有的category和tag。第一个问题出现了，有一个tag死活选不上，原因是在一个space页面，不同的category里面，存在着名字相同的tag，而我们处理是只会选中最先出现的那个，废了半天劲搞不定，去和客户沟通，客户也认为在不同的category里面不应该出现重复的tag，OK，干掉重复的，更新我们的taxonomy.第二个问题出现了，如何来验证广告的url里面包含了所有的tag和category呢？由于rul里面的category的顺序和页面取的不一样，并且tag的顺序也不同，有canonical顺序还有其他的排序规则，无法来比对是否一直，此时选用了一个非常费时的方法，将其打散成hashset，然后比对两个是否一直，这样就忽略了顺序所带来的干扰。最终，我花了好几天的时间在这个cucumber test的验证上，而真正的实现java代码只用了一个多小时的时间，:(</p>
 
@@ -202,10 +202,11 @@
     <article class="post">
 	<h1 class="title"><a href="/blog/learned-from-pair-programming/">Learned From Pair-programming</a></h1>
 	<div class="entry-content">
-		<p><a href="http://wangyan.info/wp-content/uploads/2011/08/pair.jpeg"><img src="http://wangyan.info/wp-content/uploads/2011/08/pair.jpeg" alt="" /></a>
-刚刚进入公司时，没有预想中的培训，而直接进入了项目组，直接投入到Story的开发当中。作为新人，碰到了诸多的困难，不熟悉的开发环境（MAC和Intellij），全新的开发流程和风格（Agile），让人困惑的项目架构，各种前沿的技术知识，甚至还没有从学生的状态中转换过来。如何快速的融入到团队？如何快速的为项目作出贡献？最终如何快速的成长？也许Pair-Programming是个答案。</p>
+		<p><a href="http://wangyan.info/wp-content/uploads/2011/08/pair.jpeg"><img src="http://wangyan.info/wp-content/uploads/2011/08/pair.jpeg" alt="" /></a></p>
 
-<p>Pair-Programming</p>
+<p>刚刚进入公司时，没有预想中的培训，而直接进入了项目组，直接投入到Story的开发当中。作为新人，碰到了诸多的困难，不熟悉的开发环境（MAC和Intellij），全新的开发流程和风格（Agile），让人困惑的项目架构，各种前沿的技术知识，甚至还没有从学生的状态中转换过来。如何快速的融入到团队？如何快速的为项目作出贡献？最终如何快速的成长？也许Pair-Programming是个答案。</p>
+
+<h1>Pair-Programming</h1>
 
 <p>Pair Programming是一个编程模式(Programming pattern)。两个程序员(driver &amp; observer)并排坐在一台电脑前，面对同一个显示器，使用同一个键盘，同一个鼠标一起工作。他们一起分析，一起设计，一起写测试例子，一起编码，一起单元测试，一起整合测试(Integration Test)，一起写文档等，基本上所有的开发环节都一齐肩并肩地，平等地，互补地进行开发工作。[1]</p>
 
@@ -213,57 +214,65 @@
 
 <p>当然，Pair-Programming也会被质疑到工作效率低，不同水平的人员之间难以配合，个人不同的开发习惯和最后的人空间等各种常见的问题。不管怎样，应该根据团队实际的情况出发，因为就像《人件》中所说的，人才是软件开发中最核心，也是最需要花时间去关注的事情。</p>
 
-<p>What are you trying to learn?</p>
+<h1>What are you trying to learn?</h1>
 
 <p>Pair开始了，一开始是茫然的，看着Pair在键盘上跟飞似地，IDE跳来跳去，窗口切来切去，心里面那个羡慕啊。一开始都是在看Pair写代码，自己只能充当一个名义上的Observer，并且有时候不知道在看什么，常常会跑神。直到有一天知道，在pair的时候，常常问自己“What are you trying to learn?”，会让你更加清楚你想要什么，你在做什么，让pair更加的有效率。</p>
 
-<p>What I have learned From Pair ?</p>
+<h1>What I have learned From Pair ?</h1>
 
 <p>从入职到现在的一个月里，和组里面的大多数人都Pair过，Pair不同的开发习惯和所擅长的知识领域让我受益匪浅。</p>
 
 <p>总结收获如下：</p>
 
-<p>1.良好的开发习惯</p>
+<h3>1.良好的开发习惯</h3>
 
 <p>一开始常常出现如下的情况：</p>
 
-<p>A.当我终于可以拿着键盘和鼠标开始写代码的时候，就被blame了：要学着丢掉鼠标，使用快捷键来提高自己的开发效率，尤其是intellij里面各种用于重构的shortcut&#8230;.</p>
+<ul>
+<li><p>当我终于可以拿着键盘和鼠标开始写代码的时候，就被blame了：要学着丢掉鼠标，使用快捷键来提高自己的开发效率，尤其是intellij里面各种用于重构的shortcut&#8230;.</p></li>
+<li><p>当我攒了一大堆的代码准备提交的时候，就被打了：要及时的commit</p></li>
+<li><p>当我拿着Story卡就开始敲代码的时候，就被骂了：要先进行任务分解，清楚自己每一步都在干什么</p></li>
+<li><p>当我直奔着写方法和设计实现细节的时候，就被K了：要贯彻TDD的思想，小步快跑</p></li>
+</ul>
 
-<p>B.当我攒了一大堆的代码准备提交的时候，就被打了：要及时的commit</p>
 
-<p>C.当我拿着Story卡就开始敲代码的时候，就被骂了：要先进行任务分解，清楚自己每一步都在干什么</p>
-
-<p>D.当我直奔着写方法和设计实现细节的时候，就被K了：要贯彻TDD的思想，小步快跑</p>
-
-<p>2.写出高质量的代码</p>
+<h3>2.写出高质量的代码</h3>
 
 <p>曾经感觉写的还可以的代码，敲出来就会被鄙视一顿，Pair总会告诉你有更好的方式来解决这个问题，哪些变量应该抽出去，哪部分应该写成接口，一步步的去除掉代码中的bad smell，逼着自己写出更好的代码。并且，会常常进行代码的重构，作为一个Pair的Observer会从更高的层面来对代码进行整理，好代码都是这么出来的。</p>
 
-<p>3.知识的共享</p>
+<h3>3.知识的共享</h3>
 
 <p>Pair-Programming最大的好处，于是这一个月，跟索大师学BDD，跟超女学UI，跟超男学Chef，跟郑大学写高质量的代码，跟杨栋学习快速解决问题的方法，跟文博学习软件架构和重构。</p>
 
 <p>从Pair身上可以学到太多自己不懂的知识和技术，更快速的扩展自己的知识边界。</p>
 
-<p>4.对项目的理解和熟悉</p>
+<h3>4.对项目的理解和熟悉</h3>
 
 <p>在别的公司，新人进来往往有至少2个月的培训期，真正开始贡献代码往往都在3个月以后了。而通过和Pair一起写代码，能够非常快速的完成对项目代码的理解和熟悉，能够以最快的速度投入到开发中去。</p>
 
-<p>5.程序员的素养</p>
+<h3>5.程序员的素养</h3>
 
-<p>在Pair-Programming的过程中，一个人的知识技术水平、反映能力、解决问题的能力会非常清晰的暴露出来，变得公开和透明。 而像所说的程序员有四怕：1) 怕自己看上去傻 2) 怕被认为是没用的 3) 怕自己变的不重要（过时）4) 怕自己不够好。 Pair时会让人很有压力，会逼迫着你去学习、提升自己、证明自己。感谢和我一起pair过的同事，能够容忍我那么多低级的错误和傻笨的表现，我会继续努力，成为一个专业和成熟的TW的developer。</p>
+<p>在Pair-Programming的过程中，一个人的知识技术水平、反映能力、解决问题的能力会非常清晰的暴露出来，变得公开和透明。</p>
 
-<p>6.这是两个人的事</p>
+<p>而像所说的程序员有四怕：</p>
+
+<ul>
+<li><p>怕自己看上去傻 </p></li>
+<li><p>怕被认为是没用的 </p></li>
+<li><p>怕自己变的不重要（过时)</p></li>
+<li><p>怕自己不够好。</p></li>
+</ul>
+
+
+<p>Pair时会让人很有压力，会逼迫着你去学习、提升自己、证明自己。感谢和我一起pair过的同事，能够容忍我那么多低级的错误和傻笨的表现，我会继续努力，成为一个专业和成熟的TW的developer。</p>
+
+<h3>6.这是两个人的事</h3>
 
 <p>在开发的过程中，常常会碰见很多让人头痛的技术难题，当一个人面对时，往往会有很大的压力，常常会走极端，甚至会突然间的奔溃或抓狂。Pair让这些难题变成两个人的事情，既缓解了压力，并且增强了解决问题的能力。同甘苦、共患难，在开发过程中同样存在，能够增强对项目的责任心和团队整体的协作能力。</p>
 
-<p>Thanks to pair， I learned a lot ！</p>
-
 <p>引用一个前辈的话：</p>
 
-<p>我们Pair 做任何一件事情。</p>
-
-<p>——ThoughtWorks 西安Office</p>
+<blockquote><p>我们Pair 做任何一件事情。 ——ThoughtWorks 西安Office</p></blockquote>
 
 		
 		
@@ -296,37 +305,35 @@
 
 
     <article class="post">
-	<h1 class="title"><a href="/blog/a-good-union-test/">A Good Union Test</a></h1>
+	<h1 class="title"><a href="/blog/a-good-unit-test/">A Good Unit Test</a></h1>
 	<div class="entry-content">
 		<p>Team上周的small talk的话题是一个好的单元测试应该是什么样子的，应该有什么样的准则，以下是我们所总结的其中一些rules。</p>
 
-<p><strong>一个测试包括：</strong></p>
+<h3>一个测试包括：</h3>
 
-<p>1.预置条件（Given）</p>
+<ol>
+<li><p>预置条件（Given）</p></li>
+<li><p>执行  (When)</p></li>
+<li><p>Assert （Then）</p></li>
+</ol>
 
-<p>2.执行  (When)</p>
 
-<p>3.Assert （Then）</p>
+<h3>好的测试应该具备</h3>
 
-<p><strong>好的测试应该具备</strong></p>
+<ol>
+<li><p>简洁明了的断言</p></li>
+<li><p>反应测试目的、容易理解的测试方法名</p></li>
+<li><p>独立的测试，尽可能的减少测试之间的依赖性</p></li>
+<li><p>逻辑简单，避免出现“if else”等等分支</p></li>
+<li><p>排除测试中的不确定因素，如时间、多线程</p></li>
+<li><p>减少对网络、文件、数据库等的依赖性</p></li>
+<li><p>唯一的测试点</p></li>
+</ol>
 
-<p>1.简洁明了的断言</p>
-
-<p>2.反应测试目的、容易理解的测试方法名</p>
-
-<p>3.独立的测试，尽可能的减少测试之间的依赖性</p>
-
-<p>4.逻辑简单，避免出现“if else”等等分支</p>
-
-<p>5.排除测试中的不确定因素，如时间、多线程</p>
-
-<p>6.减少对网络、文件、数据库等的依赖性</p>
-
-<p>7.唯一的测试点</p>
 
 <p>InfoQ上也有一篇关于单元测试的文章</p>
 
-<pre><code>&lt;a href="http://www.infoq.com/cn/news/2009/07/Better-Unit-Tests" rel="permalink"&gt;更好的单元测试准则&lt;/a&gt; http://www.infoq.com/cn/news/2009/07/Better-Unit-Tests
+<pre><code>&lt;a href="http://www.infoq.com/cn/news/2009/07/Better-Unit-Tests" rel="permalink"&gt;更好的单元测试准则&lt;/a&gt; 
 </code></pre>
 
 		
@@ -364,25 +371,32 @@
 	<div class="entry-content">
 		<p>Story development include the following steps:</p>
 
-<p><strong>1.Get story card</strong></p>
+<h3>Get story card</h3>
 
-<p>When you get a new story card, first you should analyze and understand the detail feature or function. If possible ,confirm the requirement with BA or QA. And most important ,you should know the rationality of story, communicate with client，don&#8217;t spend too much time on the extrem or BT requirement .</p>
+<ol>
+<li><p>you should analyze and understand the detail feature or function. If possible ,confirm the requirement with BA or QA.</p></li>
+<li><p>you should know the rationality of story, communicate with client.</p></li>
+<li><p>don&#8217;t spend too much time on the extrem or BT requirement .</p></li>
+</ol>
 
-<p><strong>2.Develop</strong></p>
 
-<p>First,Decompose the story into several tasks which can be finished in limited time, but the granularity depends on you and your pairs.</p>
+<h3>Develop</h3>
 
-<p>Second, begin to write tests, using BDD and TDD to implement the function.</p>
+<ol>
+<li><p>Decompose the story into several tasks which can be finished in limited time, but the granularity depends on you and your pairs.</p></li>
+<li><p>begin to write tests, using BDD and TDD to implement the function.</p></li>
+<li><p>Refractor your code and commit/push it.</p></li>
+</ol>
 
-<p>Third, Refractor your code and commit/push it.</p>
 
-<p><strong>3.Show case</strong></p>
+<h3>Showcase</h3>
 
-<p>1.Prepare the environment for the test according to AC.</p>
+<ol>
+<li><p>Prepare the environment for the test according to AC.</p></li>
+<li><p>Test it at least 2 times by yourself.</p></li>
+<li><p>Show it to QA.</p></li>
+</ol>
 
-<p>2.Test it at least 2 times by yourself.</p>
-
-<p>3.Show it to QA.</p>
 
 		
 		
