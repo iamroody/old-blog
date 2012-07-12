@@ -4,7 +4,7 @@
   <title><![CDATA[I am Roody]]></title>
   <link href="http://iamroody.github.com/atom.xml" rel="self"/>
   <link href="http://iamroody.github.com/"/>
-  <updated>2012-07-12T09:26:39+08:00</updated>
+  <updated>2012-07-12T23:27:45+08:00</updated>
   <id>http://iamroody.github.com/</id>
   <author>
     <name><![CDATA[Roody]]></name>
@@ -12,25 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[be back]]></title>
-    <link href="http://iamroody.github.com/blog/be-back/"/>
-    <updated>2012-07-12T09:05:00+08:00</updated>
-    <id>http://iamroody.github.com/blog/be-back</id>
-    <content type="html"><![CDATA[<p>我想测试一下代码的显示功能和文件上传功能</p>
-
-<h1>test</h1>
-
-<pre><code>1.hello
-2.world
-</code></pre>
-
-<p><strong><em>test</em></strong></p>
-
-<blockquote><p>引用的功能吗好看的么发生的.</p></blockquote>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[2011~2012]]></title>
