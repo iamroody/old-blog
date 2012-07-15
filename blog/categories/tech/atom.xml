@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tech | I am Roody]]></title>
   <link href="http://iamroody.github.com/blog/categories/tech/atom.xml" rel="self"/>
   <link href="http://iamroody.github.com/"/>
-  <updated>2012-07-13T02:03:31+08:00</updated>
+  <updated>2012-07-15T12:29:05+08:00</updated>
   <id>http://iamroody.github.com/</id>
   <author>
     <name><![CDATA[Roody]]></name>
@@ -18,7 +18,7 @@
     <link href="http://iamroody.github.com/blog/devops/"/>
     <updated>2011-11-10T00:03:23+08:00</updated>
     <id>http://iamroody.github.com/blog/devops</id>
-    <content type="html"><![CDATA[<p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-09-at-11.41.35-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-09-at-11.41.35-PM-300x193.png" alt="" /></a></p>
+    <content type="html"><![CDATA[<p><img src="/assets/pic/devops.jpg"></p>
 
 <p>Today, Cosmin gave us a session about devops, but the session didn't tell too much about what's the devops, it focused on another aspect about project. When the project's development is finished, who will care about the rest works, including how to deploy , maintain, upgrade, monitor and so on.  The session talked a lot about what the operation team need and do.</p>
 
@@ -33,7 +33,7 @@
     <link href="http://iamroody.github.com/blog/the-next-30-days/"/>
     <updated>2011-11-08T23:21:22+08:00</updated>
     <id>http://iamroody.github.com/blog/the-next-30-days</id>
-    <content type="html"><![CDATA[<p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-08-at-11.23.19-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-08-at-11.23.19-PM.png" alt="" /></a></p>
+    <content type="html"><![CDATA[<p><img src="/assets/pic/time.jpg"></p>
 
 <p>Michael shared a TED video named <a href="http://v.youku.com/v_show/id_XMjgxNDA4OTIw.html">"the next 30 days"</a>, it talks about make some personal plan in next 30 days.</p>
 
@@ -52,7 +52,7 @@
     <link href="http://iamroody.github.com/blog/what-i-want-to-be-in-next-5-years/"/>
     <updated>2011-11-06T23:54:46+08:00</updated>
     <id>http://iamroody.github.com/blog/what-i-want-to-be-in-next-5-years</id>
-    <content type="html"><![CDATA[<p><a href="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-06-at-11.52.51-PM.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/Screen-shot-2011-11-06-at-11.52.51-PM.png" alt="" /></a></p>
+    <content type="html"><![CDATA[<p><img src="/assets/pic/road.jpg"></p>
 
 <h3>Ask Yourself</h3>
 
@@ -64,8 +64,9 @@
 
 <p>From a thoughtworker's blog, i know that one person's future depends on fit that you between your company's core values. Person's development is related to your company's development. What's your company's core offering ? What can you offer values in those offerings?</p>
 
-<p>The following picture is thoughtworks' core offering:<br>
-<a href="http://wangyan.info/wp-content/uploads/2011/11/core-offering.png"><img src="http://wangyan.info/wp-content/uploads/2011/11/core-offering.png" alt="" /></a></p>
+<p>The following picture is thoughtworks' core offering:</p>
+
+<p><img src="/assets/pic/core-offering.png"></p>
 
 <p>thoughtworks' core values are software excellence, Methodology around it is continuous design and delivery . the left side is consulting, including experience design, continuous improvement and technical skills. The right side is ALM , including Go, Mingle and Twist.</p>
 
@@ -91,8 +92,9 @@
     <link href="http://iamroody.github.com/blog/pechakucha/"/>
     <updated>2011-11-05T23:54:42+08:00</updated>
     <id>http://iamroody.github.com/blog/pechakucha</id>
-    <content type="html"><![CDATA[<p>[gallery]
-In thoughtworks university , every wednesday is PechaKucha night. At that night, presenter will give a presentation based on 20 slides, forward automatically in every 20 seconds. The topic can be anything that you know well or interested, such as drink, mind, movie star, food , tea, sports and so on.</p>
+    <content type="html"><![CDATA[<p><img src="/assets/pic/pecha-kucha.jpg"></p>
+
+<p>In thoughtworks university , every wednesday is PechaKucha night. At that night, presenter will give a presentation based on 20 slides, forward automatically in every 20 seconds. The topic can be anything that you know well or interested, such as drink, mind, movie star, food , tea, sports and so on.</p>
 
 <p>In traditional presentation, presenter always talked a lot and miss the key point of subject. PechaKucha makes you using a simple and refined way to transfer new knowledge or concept , and it won't take a long time ,just 400 seconds.</p>
 
