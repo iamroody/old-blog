@@ -1,0 +1,215 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>项目的快速启动 - I am Roody</title>
+	<meta name="author" content="Roody">
+
+	
+	<meta name="description" content="今天，TW郑大晔校讲述的内容是关于一个项目如何从需求分析开始，经历user story、技术选型，到达项目的前期开发阶段，糅合着周期性的反馈，最后提交给用户第一个版本的快速启动过程。在这里记录和分享一下，今天从这里所获得的收获。 在开始谈论如何启动一个项目之前， &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="I am Roody" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">I am Roody</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:iamroody.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:iamroody.github.com">
+	</form>
+</nav>
+
+</header>
+	
+	<div id="content" class="inner"><article class="post">
+	<h1 class="title">项目的快速启动</h1>
+	<div class="entry-content"><p>今天，TW郑大晔校讲述的内容是关于一个项目如何从需求分析开始，经历user story、技术选型，到达项目的前期开发阶段，糅合着周期性的反馈，最后提交给用户第一个版本的快速启动过程。在这里记录和分享一下，今天从这里所获得的收获。</p>
+
+<p>在开始谈论如何启动一个项目之前，先来拿一个简单的生活中的例子来讨论一下我们将会遇到什么样的问题。</p>
+
+<p>Problem：一个陕北的淳朴的客户找到我们5个人的团队，要求我们在1分钟之内作出30顶满足他需求的帽子(用纸叠的)。一系列的需要思考的东西产生了：客户想要什么样的帽子？挡风保暖，遮阳防晒，还是更为fashion的？如何分工，谁去和客户沟通，谁又去专门造帽子？我们能否2秒钟一顶帽子的速度完成用户需求，假如不行怎么办？我们如何不断的根据客户需求来修改帽子的样式？团队中有些人手没那么灵巧怎么办？我们之前造过围巾，有没有一套的造帽子的流程？</p>
+
+<p>先留着上面问题，也不去想客户是如何找到我们这个团队，我们的市场是如何拿下客户的，至少我们现在知道的是：客户有需求，我们有活了，开始启动项目吧！</p>
+
+<h3>1.需求分析</h3>
+
+<p>所有人都知道需求分析是项目启动中最重要的阶段，一定要做出满足客户需求的产品。但往往在需求分析阶段，客户自己都不知道自己想要什么样的，或者一会觉得这样好，一会觉得那样不错。如果花了几个星期做出一个看似完美需求文档，同时花了几个月的时间做出了一个看似满足完美需求的产品，结果客户华丽丽的发现这根本就不是他们想要的，岂不是悲剧了？既然人都是善变的，那干脆就了解客户最最最最基本的功能需求，然后尽可能快的交付给客户可使用的最初级的版本，因为客户虽然无法清楚的描述出他们所期望的产品，但是当产品呈现在他们面前时，他们却十分清楚知道，他们不想要什么。</p>
+
+<p>和客户的长达10分钟的讨论，基本需求如下：为客户的超市做一个计价系统，在该超市里，绝大多数商品是需要缴税的，有些商品(如图书、食物)是免税的，有些进口商品需要交纳额外进口税，当顾客购买时，计算出商品总价。</p>
+
+<p>PS：在需求分析阶段，有些比如项目成本、人力成本、客户支付能力需要有专门的分析师来做分析和评估，希望能遇到给得起钱，又好对付的客户。</p>
+
+<h3>2.user story</h3>
+
+<p>在完成用户的基本需求之后，其实第一个迭代已经开始了，我们需要考虑将这个迭代再细分成一个个的对客户有价值的可见的功能，也就是user story。user story其实是对客户需求或行为的一种再现，因为客户喜欢用眼睛看或者亲自操作来判断每一个story 或者迭代的成果是否合他们的意，所以希望user story 尽可能的是一种可展现的有价值的功能实现。</p>
+
+<p>story的基本格式是 AS  <strong><strong>，i want to </strong></strong>,so that ***。此外还有story的等级、平分、时间限度等等细节性的东西。</p>
+
+<p>在这个项目中，我们可以将需求分成几个最简单的story:</p>
+
+<p>As a customer, i want to know all the goods in this shop ,so that i can get a list of goods name.</p>
+
+<p>As a customer, i want to buy some  goods (books、foods )without tax，so that i want to get the total cost of them.</p>
+
+<p>…. …..</p>
+
+<p>当然了，根据不同的需求或实现上的优先等级，可以划分成其他的story，但最基本的必须保证每个story是可测试的，客户可使用的。</p>
+
+<p>PS：如果能让客户再次参与到user story的制作过程中，将会更加的精准。</p>
+
+<h3>3.技术选型</h3>
+
+<p>在完成user story之后，我们需要考虑如何来实现他们，这时候就需要团队来考虑使用哪种技术，像语言、开发框架、开发环境等等。在这个选择的过程中，有以下几个标准需要我们来参考（排名不分先后）。</p>
+
+<p>A.客户方面：客户永远是我们的终极BOSS，也许懂技术的客户会提出种种的技术上的要求和限制，不懂技术的客户也许更容易蒙混入关，只需要告诉他们这个是最棒的（just a joke）。在这里，需要根据客户的现有的情况，如何充分利用客户的资源以及和客户的技术团队（如果有的话）接轨，等等来选用合适的技术。</p>
+
+<p>B.开发团队方面：特别是我们目前的技术和经验积累，尽可能快速的开发出第一个版本。此外也要考虑到团队的能力提升，大家经常做重复性的工作肯定会厌烦，所以如果能在项目开发过程中，尝试些新鲜的或大家不熟悉的技术，更有助于团队成员的成长。</p>
+
+<p>C.项目方面：这仅仅是项目初期阶段，要考虑到未来的可扩展性、可集成性和跨平台性，长远的来规划项目。</p>
+
+<p>D.技术方面：往往项目所需求的不是最先进的技术，而是最成熟、最稳定的技术，哪怕常常会觉得非常落后。不要时髦的，要用最适合的。另外各种技术都有它的优缺点和常用的领域，这些够技术总监琢磨的了。</p>
+
+<p>根据多种情况考虑，我们选用B/S结构，java +mysql 的组合来开发。</p>
+
+<h3>4.前期开发</h3>
+
+<p>我们终于进入开发阶段了，首先我们要建立一个完善的开发环境和测试环境。因为敏捷开发过程中的，每一个开发人员每天都会不断的提交代码，外加上团队也许是分布式的，这样会导致开发测试的过程非常tough，所以每一个DEV需要对自己的代码负责，不能全交给QA，这是一个全民皆兵的团队，所以DEV和QA的角色是轮换的。这样的话，开发、编译、测试、提交一系列的过程需要版本控制、自动化测试、持续集成的支持。</p>
+
+<p>另外，如果有新的员工加入的话，如何让其能尽快的融入到开发中，也是要考虑的。</p>
+
+<h3>5.周期性反馈</h3>
+
+<p>这里讲的是团队内部的反馈，大家探讨项目中做的好的方面、不好的方面还有哪方面的suggestion，让信息能快速的汇总，并能最快速的反馈回去。讨论的内容可以不局限于项目，甚至说，办公室太乱，桌上没有零食，导致开发效率过低，也可以提。呵呵，一个融合的工作和交流环境是非常重要的，尤其是对敏捷的团队。</p>
+
+<h3>6.交付客户</h3>
+
+<p>这是第一个迭代的完成，我们交付给了客户第一个可用的版本，让客户在这个版本上，尽可能的提要求吧。反正客户跑不了了，那先让我们庆祝一下吧！嘿嘿！</p>
+
+<p>这是一个项目的前期的完整开发流程，经历了这个阶段之后，希望大家能继续embrace接下来客户所提出的种种变化，最后高效和漂亮的提交给客户一个完美的产品。</p>
+
+<p>PS：整篇文章仅仅代表我个人的理解，有不对的地方希望能和大家讨论。</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-12T15:40:00+08:00" pubdate data-updated="true">Dec 12<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+</div>
+	
+		<span class="comments"><a href="/blog/quick-start-for-project/#disqus_thread">Comments</a></span>
+	
+</div></article>
+<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2012
+
+    Roody
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'iamroody';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://iamroody.github.com/blog/quick-start-for-project/';
+        var disqus_url = 'http://iamroody.github.com/blog/quick-start-for-project/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>

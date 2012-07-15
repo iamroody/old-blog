@@ -4,7 +4,7 @@
   <title><![CDATA[I am Roody]]></title>
   <link href="http://iamroody.github.com/atom.xml" rel="self"/>
   <link href="http://iamroody.github.com/"/>
-  <updated>2012-07-15T13:24:37+08:00</updated>
+  <updated>2012-07-15T17:04:45+08:00</updated>
   <id>http://iamroody.github.com/</id>
   <author>
     <name><![CDATA[Roody]]></name>
@@ -718,6 +718,146 @@ For postgresql, when we want to add a new model related table in django, we shou
 
 
 <p>10.Push your code before get off work</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[她真的老去了]]></title>
+    <link href="http://iamroody.github.com/blog/she/"/>
+    <updated>2011-07-15T16:35:00+08:00</updated>
+    <id>http://iamroody.github.com/blog/she</id>
+    <content type="html"><![CDATA[<p>她真的开始老去（诞生于2001年的7月）<br>
+她的面庞开始变黄失去已有的光彩（15寸球面显示器）<br>
+她的大脑开始慢慢的变得迟钝（赛扬633MHZCPU）<br>
+她的思想开始跟不上这个变化如此迅速的时代（win2000操作系统）<br>
+她的记忆力也开始衰退（内存192MBSDRAM）<br>
+她甚至开始忘记曾经快乐的过去（硬盘19G）<br>
+她开始习惯在我的耳边唠叨（机器声音开始变大）<br>
+她开始莫名其妙的对我发脾气（机器经常重启）<br>
+她甚至会生气到一下子晕过去（有的时候会死机）<br>
+她进过无数次的医院（进过多次维修店）<br>
+她甚至做过好多的器官移植（更新过不少东西）<br>
+但是我依然深深的爱着她<br>
+尽管她出身贫寒（当初3800元配的）<br>
+因为她早已是我生命中不可或缺的一部分<br>
+她依然尽全力的支持着我！<br>
+她像个无所不能的魔法师为我满足各种需求！<br>
+她身上有UBUNTU、DSL、GEEXBOX、WIN2000、.NET2003、SQL2000、PHOTOSHOP、NOD32<br>
+我相信她会陪我到毕业的那一天的！<br>
+为我的“她”致敬！<br>
+尽管她真的开始老去！<br></p>
+
+<p>PS:这篇文章写于2008年4月份，整个本科时代一直是这台古董电脑陪着我，08年的6月份50块钱把她给卖了，现在颇为怀念。今天偶然翻到了当时留做纪念的一根64M内存，开始怀念我的古董机。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[中国省市县乡村五级数据库]]></title>
+    <link href="http://iamroody.github.com/blog/china-geo-info-database/"/>
+    <updated>2011-06-15T16:38:00+08:00</updated>
+    <id>http://iamroody.github.com/blog/china-geo-info-database</id>
+    <content type="html"><![CDATA[<p>前些日子一直在找寻较为详细的包含中国省市县乡村信息的数据，最后幸运的找见一堆txt文档(按理说国家应该提供吧)，里面包含了绝大多数信息，如下：<br>
+<img src="http://iamroody.github.com/assets/pic/省市县乡村txt.jpg"></p>
+
+<p>我国的行政区规划代码是这样定义的，12位的统计用区划代码中，第1～2位，为省级代码；第3～4 位，为地级代码； 第5～6位，为县级代码；    第7～9位，为乡级代码；    第10～12位，为村级代码。</p>
+
+<p>   我首先将这些文件读入解析生成为一个XML文档，然后将xml中的数据写入到数据库中。数据库建了5个表，分别存储省province、市city、县county、乡town、村village。表结构:ID顺序编号、Name名称、Code编码、CityID所属的上一级ID。</p>
+
+<p>   统计出来一共有34个省、直辖市和自治区，344个地级市，3152个县、区，43920个乡、镇、街道办事处，719472个村、社区。（市、县、乡、村均不包含港澳台的数据）</p>
+
+<p>在此分享一下省市县乡村数据库，sql文件的下载地址：<a href="http://iamroody.github.com/assets/download/geoinfo.zip">省市县乡村数据库SQL下载</></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[upgrade fault for wordpress 3.1]]></title>
+    <link href="http://iamroody.github.com/blog/upgrade-fault-for-wordpress-3-dot-1/"/>
+    <updated>2011-02-23T16:04:00+08:00</updated>
+    <id>http://iamroody.github.com/blog/upgrade-fault-for-wordpress-3-dot-1</id>
+    <content type="html"><![CDATA[<h3>错误1：自动升级需要输入ftp用户名和密码</h3>
+
+<p>这个问题是由于运行httpd 或apache的账号和wordpress安装目录的属主不一致而带来的权限问题，只有vps或独立主机时才会出现这个问题，如果是虚拟空间用户的话，只需要把虚拟空间的ftp用户名和密码填上即可。如果你的主机或vps上面安装了ftp服务业别尝试使用ftp更新，因为就算你的ftp运行正常，也常常会出现“无法连接ftp服务器”这个错误，所以还是采用下面的方法。</p>
+
+<p>解决方法就是查看一下现在运行的apahce 或httpd的用户，然后将wordpress安装目录的owner更改为相同用户即可。具体的解决方法如下：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ps</span> aux | grep apache2
+</span><span class='line'><span class="nv">$ps</span> aux | grep httpd
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>查看启动账号，我的httpd的启动账号是apache，所以需要把wordpress安装目录的owner改为apache。
+chown -R apache wordpress安装目录</p>
+
+<h3>错误2：内存分配失败</h3>
+
+<p>wordpress 3.0x往 3.1升级的时候，出现如下错误：<br>
+Fatal error: Allowed memory size of 33554432 bytes exhausted (tried to allocate 7680 bytes)</p>
+
+<p>最简单的解决方法如下：</p>
+
+<p>在wp-includes文件夹下打开 default-constants.php ：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">if (!defined(&#39;WP_MEMORY_LIMIT&#39;)) {</span>
+</span><span class='line'><span class="x">  if(is_multisite()) </span>
+</span><span class='line'><span class="x">  {</span>
+</span><span class='line'><span class="x">      define(&#39;WP_MEMORY_LIMIT&#39;, &#39;64M&#39;);</span>
+</span><span class='line'><span class="x">  } else </span>
+</span><span class='line'><span class="x">  {</span>
+</span><span class='line'><span class="x">      define(&#39;WP_MEMORY_LIMIT&#39;, &#39;32M&#39;);</span>
+</span><span class='line'><span class="x">  }</span>
+</span><span class='line'><span class="x">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>修改如下，来就是增加内存空间限制:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">if (!defined(&#39;WP_MEMORY_LIMIT&#39;)) {</span>
+</span><span class='line'><span class="x">  if(is_multisite()) </span>
+</span><span class='line'><span class="x">  {</span>
+</span><span class='line'><span class="x">      define(&#39;WP_MEMORY_LIMIT&#39;, &#39;64M&#39;);</span>
+</span><span class='line'><span class="x">  } else </span>
+</span><span class='line'><span class="x">  {</span>
+</span><span class='line'><span class="x">      define(&#39;WP_MEMORY_LIMIT&#39;, &#39;64M&#39;);</span>
+</span><span class='line'><span class="x">  }</span>
+</span><span class='line'><span class="x">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>上面的方法解决了我一个问题，但是当我升级完插件又发现出错了，这次的位置是plugin.php，继续找解决方法。</p>
+
+<p>关于解决Fatal error: Allowed memory size of 33554432 bytes exhausted错误有如下几种解决方法，可以尝试一下：</p>
+
+<ol>
+<li><p>If you have access to your PHP.ini file, change the line in PHP.ini
+If your line shows 32M try 64M:
+memory_limit = 64M ; Maximum amount of memory a script may consume (64MB)</p></li>
+<li><p>If you don’t have access to PHP.ini try adding this to an .htaccess file:
+php_value memory_limit 64M</p></li>
+<li><p>就是刚开始所描述的错误，在wp-includes/default-constants.php中修改
+define(&#8216;WP_MEMORY_LIMIT&#8217;, &#8216;64M&#8217;);</p></li>
+<li><p>Talk to your host.</p></li>
+</ol>
+
 ]]></content>
   </entry>
   

@@ -1,6 +1,38 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://iamroody.github.com/blog/quick-start-for-project/</loc>
+        <lastmod>2012-07-15T15:43:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/ted/</loc>
+        <lastmod>2012-07-15T15:55:20+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/first-travel/</loc>
+        <lastmod>2012-07-15T16:08:51+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/choose-language-and-env-for-development/</loc>
+        <lastmod>2012-07-15T16:01:15+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/a-loss-may-turn-out-to-be-a-gain/</loc>
+        <lastmod>2012-07-15T16:03:28+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/upgrade-fault-for-wordpress-3-dot-1/</loc>
+        <lastmod>2012-07-15T16:22:53+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/china-geo-info-database/</loc>
+        <lastmod>2012-07-15T16:52:42+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://iamroody.github.com/blog/she/</loc>
+        <lastmod>2012-07-15T16:37:16+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://iamroody.github.com/blog/my-10-bad-habits-in-the-first-month/</loc>
         <lastmod>2012-07-12T23:54:04+08:00</lastmod>
     </url>
@@ -70,10 +102,10 @@
     </url>
     <url>
         <loc>http://iamroody.github.com/blog/archives/</loc>
-        <lastmod>2012-07-15T12:26:22+08:00</lastmod>
+        <lastmod>2012-07-15T16:52:42+08:00</lastmod>
     </url>
     <url>
         <loc>http://iamroody.github.com/</loc>
-        <lastmod>2012-07-15T12:26:22+08:00</lastmod>
+        <lastmod>2012-07-15T16:52:42+08:00</lastmod>
     </url>
 </urlset>
