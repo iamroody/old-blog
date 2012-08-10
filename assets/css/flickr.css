@@ -1,0 +1,10 @@
+.image {
+	width: 250px;
+	float: left;
+	margin: 10px;
+	list-style-type: none;
+}
+
+#footer {
+	float: left;
+}

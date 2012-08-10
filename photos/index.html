@@ -3,11 +3,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>My 10 bad habits in the first month - I am Roody</title>
+	<title>photos - I am Roody</title>
 	<meta name="author" content="Roody">
 
 	
-	<meta name="description" content="In the first month of my working life, i have suffered a huge change from a student to a thoughtworker. No pains no gains, when my pairs and PM told &hellip;">
+	<meta name="description" content="<script type="text/javascript" language="javascript"
+src="http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key= &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -71,70 +72,51 @@
 
 </header>
 	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">My 10 Bad Habits in the First Month</h1>
-	<div class="entry-content"><p>In the first month of my working life, i have suffered a huge change from a student to a thoughtworker. No pains no gains, when my pairs and PM told me that it should do like this, I find some bad habits of mine during the development . Not top 10 bad habits,just 10, no more meanings.</p>
+	<div id="content" class="inner"><p><link rel="stylesheet" type="text/css" href="/assets/css/flickr.css"></link>
+<link rel="stylesheet" type="text/css" href="/assets/css/adipoli.css"></link></p>
 
-<p>1.Throw mouse and start to enjoy the keyboard shortcuts,let manipulation could get up your mind..As a thoughtworker, that&#8217;s the first thing in develop.</p>
-
-<p>2.Don&#8217;t be afraid to ask your pair questions. The greatest advantage of pair programing is  knowledge sharing,so ask more questions if you don&#8217;t understand, you will grow quickly.</p>
-
-<ol>
-<li><p>Work with your pair and focus the current work.Sometimes, l turn my attention to my last story to fix some bugs when my pair and me have started a new story, In this case, focus on current story or work with my pair to resolve the bugs together, don&#8217;t be a Lone Ranger</p></li>
-<li><p>Task Decomposition before develop. It will make you understand what are you doing.</p></li>
-<li><p>Diff your code before you commit it, ensure the code you have changed is what you want.</p></li>
-<li><p>Do the things by priority</p></li>
-<li><p>Write a clear commit instead of &#8220;make a lot of changes&#8221;</p></li>
-</ol>
-
-
-<p>8.When you finish a separate step or function , commit it to your local machine, don&#8217;t commit a lot in one time.</p>
-
-<ol>
-<li>Must run the whole build and all test before push code</li>
-</ol>
-
-
-<p>10.Push your code before get off work</p>
+<div class = "flickr">
+<ul class = "images">
+</ul>
 </div>
 
 
-<div class="meta">
-	<div class="date">
+
+
+<script type="text/javascript" src="/assets/js/jquery-1.7.2.min.js" ></script>
+
+
+<script type="text/javascript" src="/assets/js/jquery.adipoli.min.js" ></script>
+
+
+<script type="text/javascript" src="/assets/js/flickr.js"></script>
+
+
+<script type="text/javascript" language="javascript"
+src="http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=a48b6921a0bad7da4511de7308592763&user_id=75066467%40N05&format=json">
+</script>
+
+
+<script type="text/javascript" src="/assets/js/jquery.imagesloaded.min.js" ></script>
+
+
+<script type="text/javascript" src="/assets/js/jquery.infinitescroll.min.js" ></script>
+
+
+<script type="text/javascript" src="/assets/js/jquery.masonry.min.js" ></script>
 
 
 
 
-
-
-
-
-  
-
-
-<time datetime="2011-08-14T16:11:46+08:00" pubdate data-updated="true">Aug 14<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/tech/'>tech</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/my-10-bad-habits-in-the-first-month/#disqus_thread">Comments</a></span>
-	
-</div></article>
-<div class="share">
-	<div class="addthis_toolbox addthis_default_style ">
-	
-	
-	<a class="addthis_button_tweet"></a>
-	
-	
-	<a class="addthis_counter addthis_pill_style"></a>
-	</div>
-  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
-</div>
+<script type="text/javascript">
+var $container = $('.images');
+$container.imagesLoaded(function(){
+$container.masonry({
+itemSelector : '.image',
+columnWidth : 280
+});
+});
+</script>
 
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2012
@@ -155,7 +137,10 @@
       var disqus_shortname = 'iamroody';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://iamroody.github.com/photos/index.html';
+        var disqus_url = 'http://iamroody.github.com/photos/index.html';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
