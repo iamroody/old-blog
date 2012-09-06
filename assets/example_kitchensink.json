@@ -1,28 +1,22 @@
 {
     "timeline":
     {
-        "headline:"Roody",
+        "headline":"我的故事",
         "type":"default",
-		"startDate":"1888",
-		"text":"我的过去",
-		"asset":
-        {
-            "media":"http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg",
-            "credit":"",
-            "caption":""
-        },
+        "text":"1987~至今",
+        "startDate":"1987,7,22",
         "date": [
             {
-                "startDate":"2012,1,18",
-                "headline":"Flickr",
-                "text":"我最喜欢的一张图片",
+                "startDate":"1987,7,22",
+                "endDate":"1987,7,22",
+                "headline":"诞生",
+                "text":"<p></p>",
                 "asset":
                 {
-                    "media":"http://farm9.staticflickr.com/8147/7175903647_da4a8f6fd1_c.jpg",
+                    "media":"http://farm8.staticflickr.com/7088/7361130750_b47f9a74f7_b.jpg",
                     "credit":"",
-                    "caption":"Directed and Edited by Matt Mayer, Produced by Seth Keim, Written by Eliot Glazer. Featuring Eliot and Ilana Glazer, who are siblings, not married."
+                    "caption":""
                 }
-            }
-        ]
+            }        ]
     }
 }
