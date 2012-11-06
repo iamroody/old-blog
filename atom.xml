@@ -4,7 +4,7 @@
   <title><![CDATA[I am Roody]]></title>
   <link href="http://iamroody.github.com/atom.xml" rel="self"/>
   <link href="http://iamroody.github.com/"/>
-  <updated>2012-11-07T00:40:09+08:00</updated>
+  <updated>2012-11-07T00:48:56+08:00</updated>
   <id>http://iamroody.github.com/</id>
   <author>
     <name><![CDATA[Roody]]></name>
@@ -84,7 +84,9 @@
     <link href="http://iamroody.github.com/blog/automated-scripts-for-adding-user/"/>
     <updated>2012-11-06T23:07:00+08:00</updated>
     <id>http://iamroody.github.com/blog/automated-scripts-for-adding-user</id>
-    <content type="html"><![CDATA[<p>很多人看到这个题目时，肯定会心里暗说，这有什么困难的？然而在实际编写中，却遇到一些需要用户交互的过程，比如添加一个用户时，需要为其设置密码的情况。</p>
+    <content type="html"><![CDATA[<p><img src="http://iamroody.github.com/assets/pic/automated.png"></p>
+
+<p>很多人看到这个题目时，肯定会心里暗说，这有什么困难的？然而在实际编写中，却遇到一些需要用户交互的过程，比如添加一个用户时，需要为其设置密码的情况。</p>
 
 <p>以ubuntu为例，我们可以使用useradd或adduser来创建用户，关于这两个命令的区别，官方有提到：</p>
 
@@ -127,7 +129,9 @@
     <link href="http://iamroody.github.com/blog/lazy-boy/"/>
     <updated>2012-07-13T01:16:00+08:00</updated>
     <id>http://iamroody.github.com/blog/lazy-boy</id>
-    <content type="html"><![CDATA[<p>一直没有写blog的原因是把blog从wordpress迁移到octopress之后，写blog没有以前那么方便。</p>
+    <content type="html"><![CDATA[<p><img src="http://iamroody.github.com/assets/pic/panda.png"></p>
+
+<p>一直没有写blog的原因是把blog从wordpress迁移到octopress之后，写blog没有以前那么方便。</p>
 
 <p>理由嘛，可以找很多：只能在vim上敲着字，没有了那么多文本编辑的功能，样式是什么样的都不清楚，外加上传文件和图片也不那么的傻瓜化，让写点东西有了一定的门槛，当然，这还是在确实有可以分享的知识储备基础之上。</p>
 
