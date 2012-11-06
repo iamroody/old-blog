@@ -1,15 +1,22 @@
 {
     "timeline":
     {
-        "headline":"我的故事",
+        "headline":"关于我",
         "type":"default",
-        "text":"1987~至今",
+        "text":"我的故事",
         "startDate":"1987,7,22",
+        "asset":
+                {
+                    "media":"/assets/pic/avatar.jpg",
+                    "credit":"roody",
+                    "caption":""
+                },
+
         "date": [
             {
                 "startDate":"1987,7,22",
                 "endDate":"1987,7,22",
-                "headline":"诞生",
+                "headline":"小时候",
                 "text":"<p></p>",
                 "asset":
                 {
@@ -17,6 +24,7 @@
                     "credit":"",
                     "caption":""
                 }
-            }        ]
+            }
+                    ]
     }
 }
