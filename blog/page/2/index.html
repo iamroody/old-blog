@@ -7,8 +7,8 @@
 	<meta name="author" content="Roody">
 
 	
-	<meta name="description" content="Today i just knew a funny command in mac os, it is command say.** This command can convert the input text to audible speech, for example : 1
-$ say &hellip;">
+	<meta name="description" content="In our project , we have two kinds of database, postgresql and couchdb.
+For postgresql, when we want to add a new model related table in django, we &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -73,6 +73,88 @@ $ say &hellip;">
 </header>
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/be-careful-auto-import-in-your-ide/">Be Careful Auto Import in Your IDE</a></h1>
+	<div class="entry-content">
+		<p>In our project , we have two kinds of database, postgresql and couchdb.
+For postgresql, when we want to add a new model related table in django, we should extend models.Model class and add some filed like this:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">ProgresTableModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span><span class='line'>     <span class="n">message</span> <span class="o">=</span> <span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">160</span><span class="p">)</span>
+</span><span class='line'>     <span class="n">organization</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Organization</span><span class="p">)</span>
+</span><span class='line'>     <span class="n">status</span> <span class="o">=</span> <span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here, we use BooleanField from django.db.models.fields, import like this:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">django.db.models.fields</span> <span class="kn">import</span> <span class="n">BooleanField</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For couchdb, we should extend Document class , and like this :</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">CouchdbModel</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+</span><span class='line'>     <span class="n">document_type</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">()</span>
+</span><span class='line'>     <span class="n">status</span> <span class="o">=</span> <span class="n">BooleanField</span><span class="p">()</span>
+</span><span class='line'>     <span class="o">......</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here, we use BooleanField from couchdb.mapping import like this:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">couchdb.mapping</span> <span class="kn">import</span>  <span class="n">BooleanField</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It looks well, unfortunately we used both in 1 python file, and the pycharm auto imported the first one, when we create database it doesn&#8217;t throw out any exception , BooleanField object in different package is totally different.</p>
+
+<p>So, be careful auto import function in your IDE !</p>
+
+<p><img src="/assets/pic/happy-sad.jpg"></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-02T19:35:52+08:00" pubdate data-updated="true">Nov 2<span>nd</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/tech/'>tech</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/be-careful-auto-import-in-your-ide//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -708,122 +790,6 @@ $ say &hellip;">
 </div>
 	
 		<span class="comments"><a href="/blog/china-geo-info-database//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/upgrade-fault-for-wordpress-3-dot-1/">Upgrade Fault for Wordpress 3.1</a></h1>
-	<div class="entry-content">
-		<h3>错误1：自动升级需要输入ftp用户名和密码</h3>
-
-<p>这个问题是由于运行httpd 或apache的账号和wordpress安装目录的属主不一致而带来的权限问题，只有vps或独立主机时才会出现这个问题，如果是虚拟空间用户的话，只需要把虚拟空间的ftp用户名和密码填上即可。如果你的主机或vps上面安装了ftp服务业别尝试使用ftp更新，因为就算你的ftp运行正常，也常常会出现“无法连接ftp服务器”这个错误，所以还是采用下面的方法。</p>
-
-<p>解决方法就是查看一下现在运行的apahce 或httpd的用户，然后将wordpress安装目录的owner更改为相同用户即可。具体的解决方法如下：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ps</span> aux | grep apache2
-</span><span class='line'><span class="nv">$ps</span> aux | grep httpd
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>查看启动账号，我的httpd的启动账号是apache，所以需要把wordpress安装目录的owner改为apache。
-chown -R apache wordpress安装目录</p>
-
-<h3>错误2：内存分配失败</h3>
-
-<p>wordpress 3.0x往 3.1升级的时候，出现如下错误：<br>
-Fatal error: Allowed memory size of 33554432 bytes exhausted (tried to allocate 7680 bytes)</p>
-
-<p>最简单的解决方法如下：</p>
-
-<p>在wp-includes文件夹下打开 default-constants.php ：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">if (!defined(&#39;WP_MEMORY_LIMIT&#39;)) {</span>
-</span><span class='line'><span class="x">  if(is_multisite()) </span>
-</span><span class='line'><span class="x">  {</span>
-</span><span class='line'><span class="x">      define(&#39;WP_MEMORY_LIMIT&#39;, &#39;64M&#39;);</span>
-</span><span class='line'><span class="x">  } else </span>
-</span><span class='line'><span class="x">  {</span>
-</span><span class='line'><span class="x">      define(&#39;WP_MEMORY_LIMIT&#39;, &#39;32M&#39;);</span>
-</span><span class='line'><span class="x">  }</span>
-</span><span class='line'><span class="x">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>修改如下，来就是增加内存空间限制:</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">if (!defined(&#39;WP_MEMORY_LIMIT&#39;)) {</span>
-</span><span class='line'><span class="x">  if(is_multisite()) </span>
-</span><span class='line'><span class="x">  {</span>
-</span><span class='line'><span class="x">      define(&#39;WP_MEMORY_LIMIT&#39;, &#39;64M&#39;);</span>
-</span><span class='line'><span class="x">  } else </span>
-</span><span class='line'><span class="x">  {</span>
-</span><span class='line'><span class="x">      define(&#39;WP_MEMORY_LIMIT&#39;, &#39;64M&#39;);</span>
-</span><span class='line'><span class="x">  }</span>
-</span><span class='line'><span class="x">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>上面的方法解决了我一个问题，但是当我升级完插件又发现出错了，这次的位置是plugin.php，继续找解决方法。</p>
-
-<p>关于解决Fatal error: Allowed memory size of 33554432 bytes exhausted错误有如下几种解决方法，可以尝试一下：</p>
-
-<ol>
-<li><p>If you have access to your PHP.ini file, change the line in PHP.ini
-If your line shows 32M try 64M:
-memory_limit = 64M ; Maximum amount of memory a script may consume (64MB)</p></li>
-<li><p>If you don’t have access to PHP.ini try adding this to an .htaccess file:
-php_value memory_limit 64M</p></li>
-<li><p>就是刚开始所描述的错误，在wp-includes/default-constants.php中修改
-define(&#8216;WP_MEMORY_LIMIT&#8217;, &#8216;64M&#8217;);</p></li>
-<li><p>Talk to your host.</p></li>
-</ol>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-23T16:04:00+08:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2011</time></div>
-	<div class="tags">
-
-</div>
-	
-		<span class="comments"><a href="/blog/upgrade-fault-for-wordpress-3-dot-1//blog/page/2/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

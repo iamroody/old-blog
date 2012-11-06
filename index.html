@@ -7,7 +7,7 @@
 	<meta name="author" content="Roody">
 
 	
-	<meta name="description" content="一直没有写blog的原因是把blog从wordpress迁移到octopress之后，写blog没有以前那么方便。 理由嘛，可以找很多：只能在vim上敲着字，没有了那么多文本编辑的功能，样式是什么样的都不清楚，外加上传文件和图片也不那么的傻瓜化，让写点东西有了一定的门槛，当然， &hellip;">
+	<meta name="description" content="很多人看到这个题目时，肯定会心里暗说，这有什么困难的？然而在实际编写中，却遇到一些需要用户交互的过程，比如添加一个用户时，需要为其设置密码的情况。 以ubuntu为例，我们可以使用useradd或adduser来创建用户，关于这两个命令的区别，官方有提到： useradd is a low &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -72,6 +72,73 @@
 </header>
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/automated-scripts-for-adding-user/">自动化脚本：添加用户</a></h1>
+	<div class="entry-content">
+		<p>很多人看到这个题目时，肯定会心里暗说，这有什么困难的？然而在实际编写中，却遇到一些需要用户交互的过程，比如添加一个用户时，需要为其设置密码的情况。</p>
+
+<p>以ubuntu为例，我们可以使用useradd或adduser来创建用户，关于这两个命令的区别，官方有提到：</p>
+
+<blockquote><p>useradd is a low level utility for adding users. On Debian,administrators should usually use adduser(8) instead.</p></blockquote>
+
+<p>下面是针对这两种命令的不同的自动化脚本来创建一个用户，并为其设置密码。</p>
+
+<h3>useradd</h3>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo useradd -m -s /bin/bash -p <span class="k">$(</span><span class="nb">echo </span>yourpassword | openssl passwd -1 -stdin<span class="k">)</span> deployer
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>使用useradd添加用户时，可以通过-p选项来设置密码，然而此处的密码是经过加密的，因此需要借用openssl生成加密后的密码，也就是所看到的“$(echo yourpassword | openssl passwd -1 -stdin)”，该脚本意思是openssl从stdin读入密码string来生成MD5-based加密的密码。</p>
+
+<p>再者，由于useradd是sh的命令，所以默认创建出的用户使用的也是“/bin/sh”, 可以通过“-s /bin/bash”来修改为bash。</p>
+
+<h3>adduser</h3>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo adduser --disabled-password --gecos <span class="s2">&quot;&quot;</span> deployer <span class="o">&amp;&amp;</span> sudo usermod -p <span class="k">$(</span><span class="nb">echo </span>yourpassword | openssl passwd -1 -stdin<span class="k">)</span> deployer
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>使用adduser添加用户时，会直接提示需要输入密码，以及其他的诸如full name等信息，可以使用“&#8211;disabled-password”来跳过设置密码阶段，使用“&#8211;gecos &#8221;”来将用户其他信息设置为空。</p>
+
+<p>用户创建成功之后，需要使用usermod来设置密码，此处依旧需要的是加密后的密码，所以还得openssl来显伸手。</p>
+
+<h3>Geek们</h3>
+
+<p>有位Geek介绍了四种不同的方法来创建linux用户，大家可以猛击下面链接观摩：</p>
+
+<p><a href="http://www.thegeekstuff.com/2009/06/useradd-adduser-newuser-how-to-create-linux-users/">The Ultimate Guide to Create Users in Linux / Unix</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-06T23:07:00+08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+</div>
+	
+		<span class="comments"><a href="/blog/automated-scripts-for-adding-user//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -627,88 +694,6 @@ All function tests are here, each page test is a single directory, also, end to 
 </div>
 	
 		<span class="comments"><a href="/blog/structure-of-function-test-in-our-project//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/be-careful-auto-import-in-your-ide/">Be Careful Auto Import in Your IDE</a></h1>
-	<div class="entry-content">
-		<p>In our project , we have two kinds of database, postgresql and couchdb.
-For postgresql, when we want to add a new model related table in django, we should extend models.Model class and add some filed like this:</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">ProgresTableModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-</span><span class='line'>     <span class="n">message</span> <span class="o">=</span> <span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">160</span><span class="p">)</span>
-</span><span class='line'>     <span class="n">organization</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Organization</span><span class="p">)</span>
-</span><span class='line'>     <span class="n">status</span> <span class="o">=</span> <span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Here, we use BooleanField from django.db.models.fields, import like this:</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">django.db.models.fields</span> <span class="kn">import</span> <span class="n">BooleanField</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>For couchdb, we should extend Document class , and like this :</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">CouchdbModel</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
-</span><span class='line'>     <span class="n">document_type</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">()</span>
-</span><span class='line'>     <span class="n">status</span> <span class="o">=</span> <span class="n">BooleanField</span><span class="p">()</span>
-</span><span class='line'>     <span class="o">......</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Here, we use BooleanField from couchdb.mapping import like this:</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">couchdb.mapping</span> <span class="kn">import</span>  <span class="n">BooleanField</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>It looks well, unfortunately we used both in 1 python file, and the pycharm auto imported the first one, when we create database it doesn&#8217;t throw out any exception , BooleanField object in different package is totally different.</p>
-
-<p>So, be careful auto import function in your IDE !</p>
-
-<p><img src="/assets/pic/happy-sad.jpg"></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-02T19:35:52+08:00" pubdate data-updated="true">Nov 2<span>nd</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/tech/'>tech</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/be-careful-auto-import-in-your-ide//index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

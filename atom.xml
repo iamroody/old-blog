@@ -4,7 +4,7 @@
   <title><![CDATA[I am Roody]]></title>
   <link href="http://iamroody.github.com/atom.xml" rel="self"/>
   <link href="http://iamroody.github.com/"/>
-  <updated>2012-09-07T00:02:12+08:00</updated>
+  <updated>2012-11-07T00:30:16+08:00</updated>
   <id>http://iamroody.github.com/</id>
   <author>
     <name><![CDATA[Roody]]></name>
@@ -12,6 +12,49 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[自动化脚本：添加用户]]></title>
+    <link href="http://iamroody.github.com/blog/automated-scripts-for-adding-user/"/>
+    <updated>2012-11-06T23:07:00+08:00</updated>
+    <id>http://iamroody.github.com/blog/automated-scripts-for-adding-user</id>
+    <content type="html"><![CDATA[<p>很多人看到这个题目时，肯定会心里暗说，这有什么困难的？然而在实际编写中，却遇到一些需要用户交互的过程，比如添加一个用户时，需要为其设置密码的情况。</p>
+
+<p>以ubuntu为例，我们可以使用useradd或adduser来创建用户，关于这两个命令的区别，官方有提到：</p>
+
+<blockquote><p>useradd is a low level utility for adding users. On Debian,administrators should usually use adduser(8) instead.</p></blockquote>
+
+<p>下面是针对这两种命令的不同的自动化脚本来创建一个用户，并为其设置密码。</p>
+
+<h3>useradd</h3>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo useradd -m -s /bin/bash -p <span class="k">$(</span><span class="nb">echo </span>yourpassword | openssl passwd -1 -stdin<span class="k">)</span> deployer
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>使用useradd添加用户时，可以通过-p选项来设置密码，然而此处的密码是经过加密的，因此需要借用openssl生成加密后的密码，也就是所看到的“$(echo yourpassword | openssl passwd -1 -stdin)”，该脚本意思是openssl从stdin读入密码string来生成MD5-based加密的密码。</p>
+
+<p>再者，由于useradd是sh的命令，所以默认创建出的用户使用的也是“/bin/sh”, 可以通过“-s /bin/bash”来修改为bash。</p>
+
+<h3>adduser</h3>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo adduser --disabled-password --gecos <span class="s2">&quot;&quot;</span> deployer <span class="o">&amp;&amp;</span> sudo usermod -p <span class="k">$(</span><span class="nb">echo </span>yourpassword | openssl passwd -1 -stdin<span class="k">)</span> deployer
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>使用adduser添加用户时，会直接提示需要输入密码，以及其他的诸如full name等信息，可以使用“&#8211;disabled-password”来跳过设置密码阶段，使用“&#8211;gecos &#8221;”来将用户其他信息设置为空。</p>
+
+<p>用户创建成功之后，需要使用usermod来设置密码，此处依旧需要的是加密后的密码，所以还得openssl来显伸手。</p>
+
+<h3>Geek们</h3>
+
+<p>有位Geek介绍了四种不同的方法来创建linux用户，大家可以猛击下面链接观摩：</p>
+
+<p><a href="http://www.thegeekstuff.com/2009/06/useradd-adduser-newuser-how-to-create-linux-users/">The Ultimate Guide to Create Users in Linux / Unix</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[lazy boy]]></title>
@@ -766,98 +809,6 @@ For postgresql, when we want to add a new model related table in django, we shou
 <p>   统计出来一共有34个省、直辖市和自治区，344个地级市，3152个县、区，43920个乡、镇、街道办事处，719472个村、社区。（市、县、乡、村均不包含港澳台的数据）</p>
 
 <p>在此分享一下省市县乡村数据库，sql文件的下载地址：<a href="http://iamroody.github.com/assets/download/geoinfo.zip">省市县乡村数据库SQL下载</></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[upgrade fault for wordpress 3.1]]></title>
-    <link href="http://iamroody.github.com/blog/upgrade-fault-for-wordpress-3-dot-1/"/>
-    <updated>2011-02-23T16:04:00+08:00</updated>
-    <id>http://iamroody.github.com/blog/upgrade-fault-for-wordpress-3-dot-1</id>
-    <content type="html"><![CDATA[<h3>错误1：自动升级需要输入ftp用户名和密码</h3>
-
-<p>这个问题是由于运行httpd 或apache的账号和wordpress安装目录的属主不一致而带来的权限问题，只有vps或独立主机时才会出现这个问题，如果是虚拟空间用户的话，只需要把虚拟空间的ftp用户名和密码填上即可。如果你的主机或vps上面安装了ftp服务业别尝试使用ftp更新，因为就算你的ftp运行正常，也常常会出现“无法连接ftp服务器”这个错误，所以还是采用下面的方法。</p>
-
-<p>解决方法就是查看一下现在运行的apahce 或httpd的用户，然后将wordpress安装目录的owner更改为相同用户即可。具体的解决方法如下：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ps</span> aux | grep apache2
-</span><span class='line'><span class="nv">$ps</span> aux | grep httpd
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>查看启动账号，我的httpd的启动账号是apache，所以需要把wordpress安装目录的owner改为apache。
-chown -R apache wordpress安装目录</p>
-
-<h3>错误2：内存分配失败</h3>
-
-<p>wordpress 3.0x往 3.1升级的时候，出现如下错误：<br>
-Fatal error: Allowed memory size of 33554432 bytes exhausted (tried to allocate 7680 bytes)</p>
-
-<p>最简单的解决方法如下：</p>
-
-<p>在wp-includes文件夹下打开 default-constants.php ：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">if (!defined(&#39;WP_MEMORY_LIMIT&#39;)) {</span>
-</span><span class='line'><span class="x">  if(is_multisite()) </span>
-</span><span class='line'><span class="x">  {</span>
-</span><span class='line'><span class="x">      define(&#39;WP_MEMORY_LIMIT&#39;, &#39;64M&#39;);</span>
-</span><span class='line'><span class="x">  } else </span>
-</span><span class='line'><span class="x">  {</span>
-</span><span class='line'><span class="x">      define(&#39;WP_MEMORY_LIMIT&#39;, &#39;32M&#39;);</span>
-</span><span class='line'><span class="x">  }</span>
-</span><span class='line'><span class="x">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>修改如下，来就是增加内存空间限制:</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">if (!defined(&#39;WP_MEMORY_LIMIT&#39;)) {</span>
-</span><span class='line'><span class="x">  if(is_multisite()) </span>
-</span><span class='line'><span class="x">  {</span>
-</span><span class='line'><span class="x">      define(&#39;WP_MEMORY_LIMIT&#39;, &#39;64M&#39;);</span>
-</span><span class='line'><span class="x">  } else </span>
-</span><span class='line'><span class="x">  {</span>
-</span><span class='line'><span class="x">      define(&#39;WP_MEMORY_LIMIT&#39;, &#39;64M&#39;);</span>
-</span><span class='line'><span class="x">  }</span>
-</span><span class='line'><span class="x">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>上面的方法解决了我一个问题，但是当我升级完插件又发现出错了，这次的位置是plugin.php，继续找解决方法。</p>
-
-<p>关于解决Fatal error: Allowed memory size of 33554432 bytes exhausted错误有如下几种解决方法，可以尝试一下：</p>
-
-<ol>
-<li><p>If you have access to your PHP.ini file, change the line in PHP.ini
-If your line shows 32M try 64M:
-memory_limit = 64M ; Maximum amount of memory a script may consume (64MB)</p></li>
-<li><p>If you don’t have access to PHP.ini try adding this to an .htaccess file:
-php_value memory_limit 64M</p></li>
-<li><p>就是刚开始所描述的错误，在wp-includes/default-constants.php中修改
-define(&#8216;WP_MEMORY_LIMIT&#8217;, &#8216;64M&#8217;);</p></li>
-<li><p>Talk to your host.</p></li>
-</ol>
-
 ]]></content>
   </entry>
   

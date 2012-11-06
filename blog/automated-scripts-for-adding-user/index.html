@@ -1,0 +1,201 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>自动化脚本：添加用户 - I am Roody</title>
+	<meta name="author" content="Roody">
+
+	
+	<meta name="description" content="很多人看到这个题目时，肯定会心里暗说，这有什么困难的？然而在实际编写中，却遇到一些需要用户交互的过程，比如添加一个用户时，需要为其设置密码的情况。 以ubuntu为例，我们可以使用useradd或adduser来创建用户，关于这两个命令的区别，官方有提到： useradd is a low &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="I am Roody" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">I am Roody</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/pages/about.html">About</a></li>
+	<li><a href="/photos/index.html">Photos</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/pages/about.html">About</a></li>
+	<li><a href="/photos/index.html">Photos</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:iamroody.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:iamroody.github.com">
+	</form>
+</nav>
+
+</header>
+	
+	<div id="content" class="inner"><article class="post">
+	<h1 class="title">自动化脚本：添加用户</h1>
+	<div class="entry-content"><p>很多人看到这个题目时，肯定会心里暗说，这有什么困难的？然而在实际编写中，却遇到一些需要用户交互的过程，比如添加一个用户时，需要为其设置密码的情况。</p>
+
+<p>以ubuntu为例，我们可以使用useradd或adduser来创建用户，关于这两个命令的区别，官方有提到：</p>
+
+<blockquote><p>useradd is a low level utility for adding users. On Debian,administrators should usually use adduser(8) instead.</p></blockquote>
+
+<p>下面是针对这两种命令的不同的自动化脚本来创建一个用户，并为其设置密码。</p>
+
+<h3>useradd</h3>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo useradd -m -s /bin/bash -p <span class="k">$(</span><span class="nb">echo </span>yourpassword | openssl passwd -1 -stdin<span class="k">)</span> deployer
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>使用useradd添加用户时，可以通过-p选项来设置密码，然而此处的密码是经过加密的，因此需要借用openssl生成加密后的密码，也就是所看到的“$(echo yourpassword | openssl passwd -1 -stdin)”，该脚本意思是openssl从stdin读入密码string来生成MD5-based加密的密码。</p>
+
+<p>再者，由于useradd是sh的命令，所以默认创建出的用户使用的也是“/bin/sh”, 可以通过“-s /bin/bash”来修改为bash。</p>
+
+<h3>adduser</h3>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo adduser --disabled-password --gecos <span class="s2">&quot;&quot;</span> deployer <span class="o">&amp;&amp;</span> sudo usermod -p <span class="k">$(</span><span class="nb">echo </span>yourpassword | openssl passwd -1 -stdin<span class="k">)</span> deployer
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>使用adduser添加用户时，会直接提示需要输入密码，以及其他的诸如full name等信息，可以使用“&#8211;disabled-password”来跳过设置密码阶段，使用“&#8211;gecos &#8221;”来将用户其他信息设置为空。</p>
+
+<p>用户创建成功之后，需要使用usermod来设置密码，此处依旧需要的是加密后的密码，所以还得openssl来显伸手。</p>
+
+<h3>Geek们</h3>
+
+<p>有位Geek介绍了四种不同的方法来创建linux用户，大家可以猛击下面链接观摩：</p>
+
+<p><a href="http://www.thegeekstuff.com/2009/06/useradd-adduser-newuser-how-to-create-linux-users/">The Ultimate Guide to Create Users in Linux / Unix</a></p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-06T23:07:00+08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+</div>
+	
+		<span class="comments"><a href="/blog/automated-scripts-for-adding-user/#disqus_thread">Comments</a></span>
+	
+</div></article>
+<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2012
+
+    Roody
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'iamroody';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://iamroody.github.com/blog/automated-scripts-for-adding-user/';
+        var disqus_url = 'http://iamroody.github.com/blog/automated-scripts-for-adding-user/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-31164274-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>
