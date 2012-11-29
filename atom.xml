@@ -4,7 +4,7 @@
   <title><![CDATA[I am Roody]]></title>
   <link href="http://iamroody.github.com/atom.xml" rel="self"/>
   <link href="http://iamroody.github.com/"/>
-  <updated>2012-11-29T09:11:20+08:00</updated>
+  <updated>2012-11-29T09:32:19+08:00</updated>
   <id>http://iamroody.github.com/</id>
   <author>
     <name><![CDATA[Roody]]></name>
@@ -18,7 +18,7 @@
     <link href="http://iamroody.github.com/blog/4-rules-for-design/"/>
     <updated>2012-11-29T09:00:00+08:00</updated>
     <id>http://iamroody.github.com/blog/4-rules-for-design</id>
-    <content type="html"><![CDATA[<p><img src="http://iamroody.github.com/assets/pic/key-borad.png"></p>
+    <content type="html"><![CDATA[<p><img src="http://iamroody.github.com/assets/pic/key-borad.jpg"></p>
 
 <p>在页面设计领域，有一些非常简单的准则来帮助我们设计出一个还能看的过去的页面，尤其对我们这些纯DEV来说，非常的有用。</p>
 
@@ -55,7 +55,7 @@
     <link href="http://iamroody.github.com/blog/14-rules-for-a-good-developer/"/>
     <updated>2012-11-07T00:32:00+08:00</updated>
     <id>http://iamroody.github.com/blog/14-rules-for-a-good-developer</id>
-    <content type="html"><![CDATA[<p><img src="http://iamroody.github.com/assets/pic/sun.png">
+    <content type="html"><![CDATA[<p><img src="http://iamroody.github.com/assets/pic/sun.jpg">
 来自一个超过10年工作经验的程序员的经验分享，作为一个好的程序员应该了解、练习和掌握的14条准则。</p>
 
 <h3>1. 手速</h3>
@@ -121,7 +121,7 @@
     <link href="http://iamroody.github.com/blog/automated-scripts-for-adding-user/"/>
     <updated>2012-11-06T23:07:00+08:00</updated>
     <id>http://iamroody.github.com/blog/automated-scripts-for-adding-user</id>
-    <content type="html"><![CDATA[<p><img src="http://iamroody.github.com/assets/pic/automated.png"></p>
+    <content type="html"><![CDATA[<p><img src="http://iamroody.github.com/assets/pic/automated.jpg"></p>
 
 <p>很多人看到这个题目时，肯定会心里暗说，这有什么困难的？然而在实际编写中，却遇到一些需要用户交互的过程，比如添加一个用户时，需要为其设置密码的情况。</p>
 
@@ -166,7 +166,7 @@
     <link href="http://iamroody.github.com/blog/lazy-boy/"/>
     <updated>2012-07-13T01:16:00+08:00</updated>
     <id>http://iamroody.github.com/blog/lazy-boy</id>
-    <content type="html"><![CDATA[<p><img src="http://iamroody.github.com/assets/pic/panda.png"></p>
+    <content type="html"><![CDATA[<p><img src="http://iamroody.github.com/assets/pic/panda.jpg"></p>
 
 <p>一直没有写blog的原因是把blog从wordpress迁移到octopress之后，写blog没有以前那么方便。</p>
 
@@ -222,7 +222,7 @@
 
 <p>首先要说起<a href="http://en.wikipedia.org/wiki/Hash_table">hash table</a>，<a href="http://math.hws.edu/javanotes/c10/s3.html">结构</a>如下：</p>
 
-<p><img src="http://iamroody.github.com/assets/pic/hashTable.png"></p>
+<p><img src="http://iamroody.github.com/assets/pic/hashTable.jpg"></p>
 
 <p>hash code 就是对象在数组中的索引的位置，当然也有情况是几个对象的hash code 值一样（如2 ,5 ），这种情况叫做 collision，我们用链表来存储。</p>
 
@@ -344,7 +344,7 @@
 
 <p>The following picture is thoughtworks&#8217; core offering:</p>
 
-<p><img src="http://iamroody.github.com/assets/pic/core-offering.png"></p>
+<p><img src="http://iamroody.github.com/assets/pic/core-offering.jpg"></p>
 
 <p>thoughtworks&#8217; core values are software excellence, Methodology around it is continuous design and delivery . the left side is consulting, including experience design, continuous improvement and technical skills. The right side is ALM , including Go, Mingle and Twist.</p>
 
