@@ -7,7 +7,7 @@
 	<meta name="author" content="Roody">
 
 	
-	<meta name="description" content="Our project is a python web application based on Django framework, we use selenium as web driver to run our function test. Directory structure of &hellip;">
+	<meta name="description" content="Definition An in-memory database is a database that runs entirely in main memory, without touching a disk. Often they run as an embedded database: &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -72,6 +72,79 @@
 </header>
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/in-memory-database/">In-memory Database</a></h1>
+	<div class="entry-content">
+		<p><strong>Definition</strong></p>
+
+<p>An in-memory database is a database that runs entirely in main memory, without touching a disk. Often they run as an embedded database: created when a process starts, running embedded within that process, and is destroyed when the process finishes.</p>
+
+<p>(From Martin Fowler , <a href="http://martinfowler.com/bliki/InMemoryTestDatabase.html">InMemoryTestDatabase</a>)</p>
+
+<p><strong>Contrast</strong></p>
+
+<p>Much faster than disk-optimized database, because simpler algorithms,fewer CPU instructions, fewer I/O reading activity.
+Lack support for durability portion of ACID, because it will lose all information when lose power or reset. But they can add durability via using some mechanisms, such as snapshot files,transaction logging,Non-volatile random, access memory, high availability.</p>
+
+<p><strong>When to use it ?</strong></p>
+
+<p>Using in-memory database in a enterprise application can dramatically reduce build time
+Not touching real database in unit test. it is safe for real database, keep database independent and clean. Don&#8217;t worry about the sequence of test caused different db result .</p>
+
+<p><strong>Which database ?</strong></p>
+
+<p><a href="http://www.sqlite.org/">Sqlite</a></p>
+
+<p><a href="http://hsqldb.org/">HSQLDB</a></p>
+
+<p><a href="http://www.mysql.com/products/cluster/">MySQL Cluster</a></p>
+
+<p><a href="http://www.mcobject.com/extremedbfamily.shtml">eXtremeDB</a></p>
+
+<p><a href="http://www.oracle.com/technetwork/database/timesten/overview/index.html">Oracle TimesTen In-Memory Databas</a></p>
+
+<p><a href="http://www.sybase.com/manage/in-memory-databases">Sybase in-memory databases</a></p>
+
+<p><a href="http://www-01.ibm.com/software/data/soliddb/">solidDB</a></p>
+
+<p><strong>Reference</strong></p>
+
+<p><a href="http://martinfowler.com/bliki/InMemoryTestDatabase.html">InMemoryTestDatabase</a></p>
+
+<p><a href="http://en.wikipedia.org/wiki/In-memory_database">In-memory database</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-04T23:59:34+08:00" pubdate data-updated="true">Nov 4<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/tech/'>tech</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/in-memory-database//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -760,60 +833,6 @@ For postgresql, when we want to add a new model related table in django, we shou
 </div>
 	
 		<span class="comments"><a href="/blog/my-10-bad-habits-in-the-first-month//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/she/">她真的老去了</a></h1>
-	<div class="entry-content">
-		<p>她真的开始老去（诞生于2001年的7月）<br>
-她的面庞开始变黄失去已有的光彩（15寸球面显示器）<br>
-她的大脑开始慢慢的变得迟钝（赛扬633MHZCPU）<br>
-她的思想开始跟不上这个变化如此迅速的时代（win2000操作系统）<br>
-她的记忆力也开始衰退（内存192MBSDRAM）<br>
-她甚至开始忘记曾经快乐的过去（硬盘19G）<br>
-她开始习惯在我的耳边唠叨（机器声音开始变大）<br>
-她开始莫名其妙的对我发脾气（机器经常重启）<br>
-她甚至会生气到一下子晕过去（有的时候会死机）<br>
-她进过无数次的医院（进过多次维修店）<br>
-她甚至做过好多的器官移植（更新过不少东西）<br>
-但是我依然深深的爱着她<br>
-尽管她出身贫寒（当初3800元配的）<br>
-因为她早已是我生命中不可或缺的一部分<br>
-她依然尽全力的支持着我！<br>
-她像个无所不能的魔法师为我满足各种需求！<br>
-她身上有UBUNTU、DSL、GEEXBOX、WIN2000、.NET2003、SQL2000、PHOTOSHOP、NOD32<br>
-我相信她会陪我到毕业的那一天的！<br>
-为我的“她”致敬！<br>
-尽管她真的开始老去！<br></p>
-
-<p>PS:这篇文章写于2008年4月份，整个本科时代一直是这台古董电脑陪着我，08年的6月份50块钱把她给卖了，现在颇为怀念。今天偶然翻到了当时留做纪念的一根64M内存，开始怀念我的古董机。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-15T16:35:00+08:00" pubdate data-updated="true">Jul 15<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-</div>
-	
-		<span class="comments"><a href="/blog/she//blog/page/2/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
