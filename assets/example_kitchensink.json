@@ -1,0 +1,29 @@
+{
+    "timeline":
+    {
+        "headline":"关于我",
+        "type":"default",
+        "text":"王琰，一个ThoughtWorker，工作在践行Lean StartUp的产品组。<br>个人角色较为复杂，一个Developer，半个OPS，半个BA，半个Marking，半个QA，半个Consultant.",
+        "asset":    
+                {
+                    "media":"/assets/pic/avatar.jpg",
+                    "credit":"roody",
+                    "caption":""
+                },
+
+        "date": [
+            {
+                "startDate":"1987,7,22",
+                "endDate":"1993,7,22",
+                "headline":"上小学前",
+                "text":"<p>开心的童年多是相同的，那时候挺喜欢搞怪，后来发现这是我的本性。</p>",
+                "asset":
+                {
+                    "media":"http://farm8.staticflickr.com/7088/7361130750_b47f9a74f7_b.jpg",
+                    "credit":"",
+                    "caption":""
+                }
+            }
+        ]
+    }
+}
