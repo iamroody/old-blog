@@ -4,7 +4,7 @@
   <title><![CDATA[I am Roody]]></title>
   <link href="http://iamroody.github.com/atom.xml" rel="self"/>
   <link href="http://iamroody.github.com/"/>
-  <updated>2012-12-28T15:51:27+08:00</updated>
+  <updated>2012-12-31T23:52:55+08:00</updated>
   <id>http://iamroody.github.com/</id>
   <author>
     <name><![CDATA[Roody]]></name>
@@ -12,6 +12,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[2012~2013]]></title>
+    <link href="http://iamroody.github.com/blog/2012%7E2013/"/>
+    <updated>2012-12-31T23:04:00+08:00</updated>
+    <id>http://iamroody.github.com/blog/2012~2013</id>
+    <content type="html"><![CDATA[<p><img src="http://iamroody.github.com/assets/pic/back.jpg"></p>
+
+<p>已经习惯了，在每年的最后一天，回顾过去的一年，以及展望未来的一年。今年也不例外，往前面翻一页就能看到去年12月31日写的帖子“2011~2012”，2012展望中的有些条条都没有完成，遗憾。算了，一并算到2013年的计划中了。</p>
+
+<h2>2012</h2>
+
+<p>我工作满一年了，非常幸运的一毕业就来到TW这样的一家公司，在这过去的一年，我能感觉到我的成长，也深知自己还有很多很多Unknown的地方。感谢TW，有机会出差几次，长了见识，开阔了眼界。</p>
+
+<p>在交付的团队结束了我的第一年，接着转入了挑战更多、节奏更快的产品组，磕磕碰碰一路走来，感触到了跟交付很不一样的内部创业的模式，也知道了自己有太多的不足，也清楚的知道创业根本就不是一件简单的事，努力中！</p>
+
+<p>一不留神成了房奴，背上了一个重重的壳，也逃不过，慢慢的往上爬喽，自己也逃不过这个圈。</p>
+
+<p>基本上没有一个长期坚持的兴趣爱好，画画、摄影、爬山、骑行基本属于半吊子，很明显的变胖了，要警惕了！</p>
+
+<p>在上半年就开始计划的长途旅行终于快要开始，很期待，虽然是穷游，但是还是会玩的很开心，并且也更要珍惜每一次旅行的机会，因为时间真的太少了，希望2013年还能有一次！</p>
+
+<h2>2013</h2>
+
+<p>对于2013年的期望，不敢奢望太多，简单列于此(当然了排名不分先后)：</p>
+
+<ol>
+<li>产品大卖，希望金数据能在2013年开花结果。</li>
+<li>真正的成为一个有价值的人，希望能是个MVP.</li>
+<li>将女朋友升级为媳妇。</li>
+<li>学会摄影。</li>
+<li>每周一篇博客。</li>
+<li>西藏旅行。</li>
+<li>写几个自己的小应用或Gem包。</li>
+<li>体重降下来，腹肌升起来。</li>
+<li>能去影响一些人。</li>
+</ol>
+
+
+<blockquote><p>2013年，我准备好了！</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[设计准则]]></title>
@@ -837,37 +879,6 @@ For postgresql, when we want to add a new model related table in django, we shou
 <li><p>Show it to QA.</p></li>
 </ol>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My 10 bad habits in the first month]]></title>
-    <link href="http://iamroody.github.com/blog/my-10-bad-habits-in-the-first-month/"/>
-    <updated>2011-08-14T16:11:46+08:00</updated>
-    <id>http://iamroody.github.com/blog/my-10-bad-habits-in-the-first-month</id>
-    <content type="html"><![CDATA[<p>In the first month of my working life, i have suffered a huge change from a student to a thoughtworker. No pains no gains, when my pairs and PM told me that it should do like this, I find some bad habits of mine during the development . Not top 10 bad habits,just 10, no more meanings.</p>
-
-<p>1.Throw mouse and start to enjoy the keyboard shortcuts,let manipulation could get up your mind..As a thoughtworker, that&#8217;s the first thing in develop.</p>
-
-<p>2.Don&#8217;t be afraid to ask your pair questions. The greatest advantage of pair programing is  knowledge sharing,so ask more questions if you don&#8217;t understand, you will grow quickly.</p>
-
-<ol>
-<li><p>Work with your pair and focus the current work.Sometimes, l turn my attention to my last story to fix some bugs when my pair and me have started a new story, In this case, focus on current story or work with my pair to resolve the bugs together, don&#8217;t be a Lone Ranger</p></li>
-<li><p>Task Decomposition before develop. It will make you understand what are you doing.</p></li>
-<li><p>Diff your code before you commit it, ensure the code you have changed is what you want.</p></li>
-<li><p>Do the things by priority</p></li>
-<li><p>Write a clear commit instead of &#8220;make a lot of changes&#8221;</p></li>
-</ol>
-
-
-<p>8.When you finish a separate step or function , commit it to your local machine, don&#8217;t commit a lot in one time.</p>
-
-<ol>
-<li>Must run the whole build and all test before push code</li>
-</ol>
-
-
-<p>10.Push your code before get off work</p>
 ]]></content>
   </entry>
   
